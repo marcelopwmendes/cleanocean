@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Game game = new Game(GridType.SIMPLE_GFX, 80, 25, 200);
+        Game game = new Game(GridType.SIMPLE_GFX, 80, 40, 200);
 
         game.start();
 
