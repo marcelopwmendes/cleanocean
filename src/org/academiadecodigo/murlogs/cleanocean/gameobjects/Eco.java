@@ -1,5 +1,6 @@
 package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 

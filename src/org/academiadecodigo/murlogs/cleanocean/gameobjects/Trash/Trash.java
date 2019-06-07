@@ -1,4 +1,4 @@
-package org.academiadecodigo.murlogs.cleanocean.gameobjects;
+package org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
@@ -11,7 +11,7 @@ public class Trash {
     private boolean picked;
 
 
-    public Trash(GridPosition position, TrashType trashType) {
+   public Trash(GridPosition gridPosition, TrashType trashType) {
         this.trashType = trashType;
         this.position = position;
         picked = false;

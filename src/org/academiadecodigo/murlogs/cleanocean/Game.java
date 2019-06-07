@@ -1,6 +1,9 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash.Glass;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash.Trash;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
@@ -29,6 +32,8 @@ public class Game {
     public void init() {
 
         grid.init();
+
+        //new Glass(grid,TrashType.GLASS, 20,20);
 
         player = new Player(grid.makeGridPosition(70,20));
         trashes = new Trash[trashQuantity];

@@ -1,4 +1,4 @@
-package org.academiadecodigo.murlogs.cleanocean.gameobjects;
+package org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash;
 
 public enum TrashType {
     PAPER(1, 10),
