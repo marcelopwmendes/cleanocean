@@ -8,14 +8,15 @@ import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
 
 public class Game {
 
-    private Player player;
     private Grid grid;
-    private Trash[] trashes;
     private int delay;
+    private Player player;
+    private Trash[] trashes;
     private Obstacle[] obstacles;
+    private Eco[] eco;
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
-    private Eco[] eco;
+    private int ecoQuantity = 5;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
 
@@ -32,8 +33,7 @@ public class Game {
         player = new Player(grid.makeGridPosition(70,20));
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
-        eco = new Eco[5];
-
+        eco = new Eco[ecoQuantity];
 
         for (int i = 0; i < trashes.length; i++) {
             int random = (int) (Math.random() * TrashType.values().length);
@@ -55,8 +55,6 @@ public class Game {
             eco[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
             eco[i].setGrid(grid);
             row += 1;
-
-
         }
 
 
