@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c390283-f9ec-4c9f-bbbb-6a3b90e6b04a" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="469653644">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="JAVA/" value="2" />
+          <entry key="cleanocean" value="1" />
+          <entry key="gitignore" value="2" />
+          <entry key="java" value="78" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="78" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="UML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="6891" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="6891" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/position/AbstractGridPosition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#859#860#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2339#2340#0" expanded="true" />
+                <element signature="e#2367#2368#0" expanded="true" />
+                <element signature="e#2407#2408#0" expanded="true" />
+                <element signature="e#2441#2442#0" expanded="true" />
+                <element signature="e#2476#2477#0" expanded="true" />
+                <element signature="e#2506#2507#0" expanded="true" />
+                <element signature="e#2553#2554#0" expanded="true" />
+                <element signature="e#2591#2592#0" expanded="true" />
+                <element signature="e#2632#2633#0" expanded="true" />
+                <element signature="e#2663#2664#0" expanded="true" />
+                <element signature="e#2747#2748#0" expanded="true" />
+                <element signature="e#2779#2780#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/position/GridPosition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxPosition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridPosition.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridType.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/EcoType.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/EcoFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/TrashType.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/Grid.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridColor.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridDirection.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxColorMapper.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxGrid.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Obstacle.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Eco.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/Main.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/TrashFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Trash.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/Game.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/position/GridPosition.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/position/AbstractGridPosition.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxPosition.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Player.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="63" />
+    <option name="y" value="23" />
+    <option name="width" value="1857" />
+    <option name="height" value="941" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cleanocean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanocean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanocean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanocean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="gameobjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanocean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="grid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanocean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanocean" type="462c0819:PsiDirectoryNode" />
+              <item name="grid" type="462c0819:PsiDirectoryNode" />
+              <item name="position" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="simpl&#9;FILE&#9;file:///Users/codecadet/cleanocean/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxPosition.java&#10;Grid&#9;FILE&#9;file:///Users/codecadet/cleanocean/src/org/academiadecodigo/murlogs/cleanocean/grid/position/GridPosition.java&#10;pl&#9;FILE&#9;file:///Users/codecadet/cleanocean/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Player.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559865587510" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.murlogs.cleanocean.Main" />
+      <module name="cleanocean" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.academiadecodigo.murlogs.cleanocean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c390283-f9ec-4c9f-bbbb-6a3b90e6b04a" name="Default Changelist" comment="" />
+      <created>1559770454453</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559770454453</updated>
+      <workItem from="1559770455723" duration="8791000" />
+      <workItem from="1559843187186" duration="19213000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="28004000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="63" y="23" width="1857" height="941" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2600551" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32979977" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32979977" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2600551" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32979977" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32979977" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/EcoType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/EcoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/ObstacleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridDirection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/GridType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxColorMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">images</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">org</node>
+            <node x="" y="">toolbarButtonGraphics</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">apple</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">javafx</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="256.0" y="236.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/org.academiadecodigo.murlogs.cleanocean">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>org.academiadecodigo.murlogs.cleanocean</OriginalElement>
+          <nodes>
+            <node x="502.5" y="1051.0">org.academiadecodigo.murlogs.cleanocean.Main</node>
+            <node x="626.9375" y="244.0">org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash</node>
+            <node x="568.0723684210527" y="0.0">org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType</node>
+            <node x="219.0" y="422.0">org.academiadecodigo.murlogs.cleanocean.gameobjects.Player</node>
+            <node x="830.9375" y="511.0">org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle</node>
+            <node x="370.3907894736842" y="288.5">org.academiadecodigo.murlogs.cleanocean.grid</node>
+            <node x="482.0" y="511.0">org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashFactory</node>
+            <node x="497.0" y="751.0">org.academiadecodigo.murlogs.cleanocean.Game</node>
+            <node x="0.0" y="499.5">org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType">
+              <point x="52.0" y="-125.0" />
+              <point x="646.5" y="701.0" />
+              <point x="820.4375" y="701.0" />
+              <point x="820.4375" y="204.0" />
+              <point x="671.655701754386" y="204.0" />
+              <point x="47.083333333333314" y="92.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.Player">
+              <point x="-52.0" y="-125.0" />
+              <point x="542.5" y="701.0" />
+              <point x="276.75" y="701.0" />
+              <point x="-57.75" y="114.5" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash">
+              <point x="26.0" y="-125.0" />
+              <point x="620.5" y="681.0" />
+              <point x="741.3125" y="681.0" />
+              <point x="22.875" y="59.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashFactory" target="org.academiadecodigo.murlogs.cleanocean.grid">
+              <point x="-75.0" y="-25.5" />
+              <point x="519.5" y="382.0" />
+              <point x="470.29078947368424" y="382.0" />
+              <point x="44.400000000000006" y="14.5" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.Player" target="org.academiadecodigo.murlogs.cleanocean.grid">
+              <point x="77.0" y="-114.5" />
+              <point x="411.5" y="402.0" />
+              <point x="403.6907894736843" y="402.0" />
+              <point x="-22.19999999999999" y="14.5" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType">
+              <point x="45.75" y="-59.0" />
+              <point x="764.1875" y="214.0" />
+              <point x="652.8223684210527" y="214.0" />
+              <point x="28.25" y="92.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco">
+              <point x="-78.0" y="-125.0" />
+              <point x="516.5" y="721.0" />
+              <point x="99.5" y="721.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Main" target="org.academiadecodigo.murlogs.cleanocean.Game">
+              <point x="-46.0" y="-25.5" />
+              <point x="548.5" y="1026.0" />
+              <point x="545.75" y="1026.0" />
+              <point x="-48.75" y="125.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType">
+              <point x="0.0" y="-37.0" />
+              <point x="99.5" y="204.0" />
+              <point x="577.4890350877195" y="204.0" />
+              <point x="-47.083333333333314" y="92.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.Player" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType">
+              <point x="-77.0" y="-114.5" />
+              <point x="257.5" y="402.0" />
+              <point x="254.88486842105272" y="402.0" />
+              <point x="254.88486842105272" y="214.0" />
+              <point x="596.3223684210527" y="214.0" />
+              <point x="-28.25" y="92.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashFactory" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType">
+              <point x="0.0" y="-25.5" />
+              <point x="594.5" y="224.0" />
+              <point x="615.155701754386" y="224.0" />
+              <point x="-9.416666666666686" y="92.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.grid">
+              <point x="-13.0" y="-125.0" />
+              <point x="581.5" y="671.0" />
+              <point x="471.5" y="671.0" />
+              <point x="471.5" y="392.0" />
+              <point x="448.09078947368425" y="392.0" />
+              <point x="22.200000000000017" y="14.5" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashFactory" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.Trash">
+              <point x="75.0" y="-25.5" />
+              <point x="669.5" y="402.0" />
+              <point x="649.8125" y="402.0" />
+              <point x="-68.625" y="59.0" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle">
+              <point x="91.0" y="-125.0" />
+              <point x="685.5" y="731.0" />
+              <point x="960.1041666666666" y="731.0" />
+              <point x="51.66666666666663" y="25.5" />
+            </edge>
+            <edge source="org.academiadecodigo.murlogs.cleanocean.Game" target="org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashFactory">
+              <point x="0.0" y="-125.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9176258992805756" x="-322.4555076440612" y="345.5444923559388" />
+          <SelectedNodes>
+            <node>org.academiadecodigo.murlogs.cleanocean.gameobjects.TrashType</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/TrashType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Obstacle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Trash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/TrashFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="57" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="10" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="59" column="30" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1398#1399#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Eco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/position/GridPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/position/AbstractGridPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/grid/SimpleGfxPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/murlogs/cleanocean/gameobjects/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2339#2340#0" expanded="true" />
+            <element signature="e#2367#2368#0" expanded="true" />
+            <element signature="e#2407#2408#0" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+            <element signature="e#2476#2477#0" expanded="true" />
+            <element signature="e#2506#2507#0" expanded="true" />
+            <element signature="e#2553#2554#0" expanded="true" />
+            <element signature="e#2591#2592#0" expanded="true" />
+            <element signature="e#2632#2633#0" expanded="true" />
+            <element signature="e#2663#2664#0" expanded="true" />
+            <element signature="e#2747#2748#0" expanded="true" />
+            <element signature="e#2779#2780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
