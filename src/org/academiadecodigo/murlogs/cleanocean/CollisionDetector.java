@@ -2,6 +2,7 @@ package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
@@ -13,12 +14,14 @@ public class CollisionDetector {
 
     private Obstacle[] obstacles;
     private Eco[] ecos;
+    private Trash[] trashes;
 
 
-    public CollisionDetector(Obstacle[] obstacles, Eco[] ecos, Grid grid) {
+    public CollisionDetector(Obstacle[] obstacles, Eco[] ecos, Trash[] trashes, Grid grid) {
         this.obstacles = obstacles;
         this.ecos = ecos;
         this.grid = grid;
+        this.trashes = trashes;
     }
 
 
@@ -53,12 +56,29 @@ public class CollisionDetector {
             }
         }
 
+        // Detect Eco
         if ( (nextCol == Main.COLS - 1) && (nextRow < 5) ) {
             return true;
         }
 
         return false;
     }
+
+    public Trash detectTrash(GridPosition position, GridDirection direction) {
+
+        int[] nextPosition = getNextPosition(position, direction);
+
+        int nextCol = nextPosition[0];
+        int nextRow = nextPosition[1];
+
+        for (Trash t : trashes) {
+            if ( (t.getPosition().getCol() == nextCol) && (t.getPosition().getRow() == nextRow) ) {
+                return t;
+            }
+        }
+        return null;
+    }
+
 
 
     public int[] getNextPosition(GridPosition position, GridDirection direction) {

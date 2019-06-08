@@ -57,7 +57,7 @@ public class Game {
         }
 
 
-        CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, grid);
+        CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid);
 
         player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1));
         player.setCollisionDetector(collisionDetector);

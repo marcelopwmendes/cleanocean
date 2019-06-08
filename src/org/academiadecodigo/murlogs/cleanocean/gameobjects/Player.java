@@ -2,6 +2,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
@@ -85,52 +86,18 @@ public class Player implements KeyboardHandler {
             return;
         }
 
+        Trash trash = collisionDetector.detectTrash(position, direction);
+        if ( trash != null ) {
+            trash.setPicked();
+            //trashCounter++;
+        }
+
 
         position.moveInDirection(direction, 1);
 
 
 
     }
-
-
-
-
-/*
-    public boolean isHittingWall(GridDirection currentDirection) {
-
-        switch (currentDirection) {
-            case LEFT:
-                if (position.getCol() == 0) {
-                    return true;
-                }
-                break;
-            case RIGHT:
-                if (position.getCol() == grid.getCols() - 1) {
-                    return true;
-                }
-                break;
-            case UP:
-                if (position.getRow() == 0) {
-                    return true;
-                }
-                break;
-            case DOWN:
-                if (position.getRow() == grid.getRows() - 1) {
-                    return true;
-                }
-        }
-
-        return false;
-
-    }
-*/
-
-
-
-
-
-
-
 
 
     public void setCollisionDetector(CollisionDetector collisionDetector) {

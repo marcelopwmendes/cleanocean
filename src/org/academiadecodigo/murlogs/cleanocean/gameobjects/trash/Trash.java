@@ -17,7 +17,7 @@ public class Trash {                    //abstract
         this.trashType = trashType;
         this.position = position;
         picked = false;
-        //position.setColor(GridColor.BLUE);
+        setTrashColor(trashType);
 
     }
 
@@ -25,6 +25,25 @@ public class Trash {                    //abstract
         this.grid = grid;
     }
 
+    public void setTrashColor(TrashType trashType) {
+        switch (trashType) {
+            case PAPER:
+                position.setColor(GridColor.BLUE);
+                break;
+            case METAL:
+                position.setColor(GridColor.ORANGE);
+                break;
+            case PLASTIC:
+                position.setColor(GridColor.YELLOW);
+                break;
+            case GLASS:
+                position.setColor(GridColor.GREEN);
+                break;
+            case ORGANIC:
+                position.setColor(GridColor.RED);
+                break;
+        }
+    }
 
     public GridPosition getPosition() {
         return position;
