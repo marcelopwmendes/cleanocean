@@ -6,6 +6,8 @@ public class SimpleGfxColorMapper {
 
     private static final Color colors[] = {
             Color.RED,
+            Color.ORANGE,
+            Color.YELLOW,
             Color.GREEN,
             Color.BLUE,
             Color.MAGENTA,
@@ -20,17 +22,23 @@ public class SimpleGfxColorMapper {
             case RED:
                 sGfxColor = colors[0];
                 break;
-            case GREEN:
+            case ORANGE:
                 sGfxColor = colors[1];
                 break;
-            case BLUE:
+            case YELLOW:
                 sGfxColor = colors[2];
                 break;
-            case MAGENTA:
+            case GREEN:
                 sGfxColor = colors[3];
                 break;
-            case NOCOLOR:
+            case BLUE:
                 sGfxColor = colors[4];
+                break;
+            case MAGENTA:
+                sGfxColor = colors[5];
+                break;
+            case NOCOLOR:
+                sGfxColor = colors[6];
                 break;
 
         }

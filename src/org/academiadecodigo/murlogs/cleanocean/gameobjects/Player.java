@@ -24,8 +24,6 @@ public class Player implements KeyboardHandler {
 
     private GridPosition position;
     protected GridDirection currentDirection;
-
-    //adicionado sem o Nuno - CHECK THIS PLS
     private Grid grid;
 
     private CollisionDetector collisionDetector;
@@ -176,14 +174,52 @@ public class Player implements KeyboardHandler {
     }
 
     public void clearTrash() {
-
+        trashCounter = 0;
+        for (int i = 0; i < trash.length; i++) {
+            trash[i] = 0;
+        }
     }
 
+    public int[] recycle() {
+        return trash;
+    }
 
     public void addTrash(TrashType trashType) {
 
-    }
+        switch (trashType) {
+            case PAPER:
+                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
+                    trash[0] += trashType.getWeight();
+                    trashCounter = trashType.getWeight();
+                }
+                break;
+            case METAL:
+                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
+                    trash[1] += trashType.getWeight();
+                    trashCounter = trashType.getWeight();
+                }
+                break;
+            case PLASTIC:
+                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
+                    trash[2] += trashType.getWeight();
+                    trashCounter = trashType.getWeight();
+                }
+                break;
+            case GLASS:
+                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
+                    trash[3] += trashType.getWeight();
+                    trashCounter = trashType.getWeight();
+                }
+                break;
+            case ORGANIC:
+                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
+                    trash[4] += trashType.getWeight();
+                    trashCounter = trashType.getWeight();
+                }
+                break;
+        }
 
+    }
 
     public int getScore() {
         return score;
@@ -191,7 +227,7 @@ public class Player implements KeyboardHandler {
 
 
     public void setScore(int score) {
-        this.score = score;
+        this.score = this.score + score;
     }
 
 
@@ -207,8 +243,6 @@ public class Player implements KeyboardHandler {
         return position;
     }
 
-
-    //adicionado sem o Nuno - CHECK THIS PLS
     public void setGrid(Grid grid) {
         this.grid = grid;
     }
