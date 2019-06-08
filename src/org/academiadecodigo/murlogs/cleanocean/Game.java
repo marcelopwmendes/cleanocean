@@ -70,10 +70,6 @@ public class Game {
         System.out.println("Starting CleanOcean...");
         init();
 
-
-
-
-
     }
 
 }
