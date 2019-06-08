@@ -1,5 +1,6 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
@@ -11,10 +12,12 @@ public class CollisionDetector {
     private Grid grid;
 
     private Obstacle[] obstacles;
+    private Eco[] ecos;
 
 
-    public CollisionDetector(Obstacle[] obstacles, Grid grid) {
+    public CollisionDetector(Obstacle[] obstacles, Eco[] ecos, Grid grid) {
         this.obstacles = obstacles;
+        this.ecos = ecos;
         this.grid = grid;
     }
 
@@ -49,6 +52,11 @@ public class CollisionDetector {
                 return true;
             }
         }
+
+        if ( (nextCol == Main.COLS - 1) && (nextRow < 5) ) {
+            return true;
+        }
+
         return false;
     }
 
@@ -103,5 +111,11 @@ public class CollisionDetector {
         nextPosition[1] = position.getRow();
         return nextPosition;
     }
+
+
+
+
+
+
 
 }

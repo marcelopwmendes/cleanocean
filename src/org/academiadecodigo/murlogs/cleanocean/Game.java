@@ -17,7 +17,7 @@ public class Game {
     private Player player;
     private Trash[] trashes;
     private Obstacle[] obstacles;
-    private Eco[] eco;
+    private Eco[] ecos;
 
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
@@ -37,12 +37,12 @@ public class Game {
 
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
-        eco = new Eco[ecoQuantity];
+        ecos = new Eco[ecoQuantity];
 
         int row = 0;
-        for (int i = 0; i < eco.length; i++) {
-            eco[i] = new Eco(grid.makeGridPosition(Main.COLS - 1, row), TrashType.values()[i]);
-            eco[i].setGrid(grid);
+        for (int i = 0; i < ecos.length; i++) {
+            ecos[i] = new Eco(grid.makeGridPosition(Main.COLS - 1, row), TrashType.values()[i]);
+            ecos[i].setGrid(grid);
             row += 1;
         }
 
@@ -57,7 +57,7 @@ public class Game {
         }
 
 
-        CollisionDetector collisionDetector = new CollisionDetector(obstacles, grid);
+        CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, grid);
 
         player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1));
         player.setCollisionDetector(collisionDetector);

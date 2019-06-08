@@ -76,33 +76,26 @@ public class Player implements KeyboardHandler {
     }
 
     public void move(GridDirection direction) {
+
+
         this.currentDirection = direction;
 
-        //se puder mexer-se, mexe-se - confirmar colisão com obstáculos/contentores
 
-/*    if (isHittingWall() || collisionDetector.detectsObstacle(position, direction)) {
-        return;
-    }
-*/
-
-/*        if (isHittingWall(direction)) {
+        if (collisionDetector.detectObstacle(position, direction)  ) {
             return;
         }
-*/
-
-
-    if (collisionDetector.detectObstacle(position, direction)) {
-        return;
-    }
 
 
         position.moveInDirection(direction, 1);
+
+
+
     }
 
 
 
 
-
+/*
     public boolean isHittingWall(GridDirection currentDirection) {
 
         switch (currentDirection) {
@@ -130,7 +123,7 @@ public class Player implements KeyboardHandler {
         return false;
 
     }
-
+*/
 
 
 
