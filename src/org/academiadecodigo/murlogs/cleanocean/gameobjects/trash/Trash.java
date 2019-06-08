@@ -1,9 +1,11 @@
-package org.academiadecodigo.murlogs.cleanocean.gameobjects;
+package org.academiadecodigo.murlogs.cleanocean.gameobjects.trash;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
+import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
-public class Trash {
+
+public class Trash {                    //abstract
 
     private GridPosition position;
     private Grid grid;
@@ -15,6 +17,8 @@ public class Trash {
         this.trashType = trashType;
         this.position = position;
         picked = false;
+        //position.setColor(GridColor.BLUE);
+
     }
 
     public void setGrid(Grid grid) {

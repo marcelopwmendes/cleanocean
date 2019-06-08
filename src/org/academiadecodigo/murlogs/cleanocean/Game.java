@@ -1,9 +1,13 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
+//import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 
 public class Game {
@@ -14,15 +18,15 @@ public class Game {
     private Trash[] trashes;
     private Obstacle[] obstacles;
     private Eco[] eco;
+
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
 
-    public Game(GridType gridType, int cols, int rows, int delay) {
 
+    public Game(GridType gridType, int cols, int rows, int delay) {
         grid = GridFactory.makeGrid(gridType, cols, rows);
         this.delay = delay;
-
     }
 
 
@@ -30,33 +34,33 @@ public class Game {
 
         grid.init();
 
-        player = new Player(grid.makeGridPosition(70,20));
+
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
         eco = new Eco[ecoQuantity];
 
-        for (int i = 0; i < trashes.length; i++) {
-            int random = (int) (Math.random() * TrashType.values().length);
-            TrashType trashType = TrashType.values()[random];
-            int col = (int) (Math.random() * 80);
-            int row = (int) (Math.random() * 25);
-            trashes[i] = new Trash(grid.makeGridPosition(col, row), trashType);
-            trashes[i].setGrid(grid);
-        }
-
-        for (int i = 0; i < obstacles.length; i++) {
-            obstacles[i] = new Obstacle(grid.makeGridPosition());
-            obstacles[i].setGrid(grid);
-        }
-
-        int col = 79;
         int row = 0;
         for (int i = 0; i < eco.length; i++) {
-            eco[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
+            eco[i] = new Eco(grid.makeGridPosition(Main.COLS - 1, row), TrashType.values()[i]);
             eco[i].setGrid(grid);
             row += 1;
         }
 
+        for (int i = 0; i < obstacles.length; i++) {
+            obstacles[i] = ObstacleFactory.makeObstacle(grid);
+            obstacles[i].setGrid(grid);
+        }
+
+        for (int i = 0; i < trashes.length; i++) {
+            trashes[i] = TrashFactory.makeTrash(grid, obstacles);
+            trashes[i].setGrid(grid);
+        }
+
+
+        CollisionDetector collisionDetector = new CollisionDetector(obstacles, grid);
+
+        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1));
+        player.setCollisionDetector(collisionDetector);
 
     }
 
@@ -65,6 +69,10 @@ public class Game {
 
         System.out.println("Starting CleanOcean...");
         init();
+
+
+
+
 
     }
 
