@@ -7,6 +7,9 @@ import org.academiadecodigo.murlogs.cleanocean.grid.SimpleGfxGrid;
 
 // "Factory" that creates the collidable objects.
 // Vamos precisar das dimensões certas para poder criar os objectos certos no sítio certo -----------------------------
+// landObstacles : criar número fixo de SHELLs e CRABs e deixar o resto aleatório
+// seaObstacles : WHALE - criar uma e deixar o resto aleatório
+
 
 public class ObstacleFactory {
 
@@ -26,6 +29,7 @@ public class ObstacleFactory {
 
         int random = (int) (Math.random() * LandObstacle.values().length);
         LandObstacle landObstacle = LandObstacle.values()[random];
+
 
         Obstacle obstacle;
 
@@ -77,9 +81,9 @@ public class ObstacleFactory {
             case BUOY:
                 obstacle = new Buoy(grid.makeGridPosition());
                 break;
-            case WHALE:
-                obstacle = new Whale(grid.makeGridPosition());
-                break;
+       //     case WHALE:
+        //        obstacle = new Whale(grid.makeGridPosition());
+         //       break;
             default:
                 obstacle = new Rock(grid.makeGridPosition());
         }
