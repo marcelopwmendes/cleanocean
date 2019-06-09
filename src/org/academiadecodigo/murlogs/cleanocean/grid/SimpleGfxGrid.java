@@ -2,25 +2,30 @@ package org.academiadecodigo.murlogs.cleanocean.grid;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class SimpleGfxGrid implements Grid {
 
     public static final int PADDING = 10;
-    private static final int CELLSIZE = 20;
+    private static final int CELLSIZE = 16;
     private int cols;
     private int rows;
     private Rectangle rectangle;
+    private Picture backgroundSand;
 
 
     public SimpleGfxGrid(int cols, int rows) {
         this.cols = cols;
         this.rows = rows;
         this.rectangle = new Rectangle(PADDING, PADDING, CELLSIZE * cols, CELLSIZE * rows);
+        this.backgroundSand = new Picture(PADDING,PADDING,"Sand1280x720.png");
+
     }
 
     @Override
     public void init() {
         rectangle.draw();
+        backgroundSand.draw();
     }
 
     public int getCols() {
