@@ -4,7 +4,7 @@ import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
-public class Obstacle {
+public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar obstáculos diferentes
 
     private GridPosition position;
     private Grid grid;
