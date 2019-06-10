@@ -40,7 +40,7 @@ public class Game {
         obstacles = new Obstacle[obstacleQuantity];
         ecos = new Eco[ecoQuantity];
 
-        int col = 79;
+        int col = Main.COLS - 1;
         int row = 0;
         for (int i = 0; i < ecos.length; i++) {
             ecos[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
@@ -82,9 +82,9 @@ public class Game {
                 if (!t.getPicked()) {
                     if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
                         t.move();
-                        if (collisionDetector.detectPlayer(t.getPosition(), t.getDirection())) {
-                            player.pickTrash(t);
-                        }
+                        //if (collisionDetector.detectPlayer(t.getPosition(), t.getDirection())) {
+                        //    player.pickTrash(t);
+                        //}
                     }
                 }
             }

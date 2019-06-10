@@ -88,7 +88,7 @@ public class Player implements KeyboardHandler {
         }
 
         Trash trash = collisionDetector.detectTrash(position, direction);
-        if (trash != null) {
+        if (trash != null && !trash.getPicked()) {
             pickTrash(trash);
         }
 
