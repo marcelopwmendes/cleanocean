@@ -6,9 +6,9 @@ import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 public class Metal extends Trash implements Movable{
 
 
-    public Metal(GridPosition gridPosition, CollisionDetector collisionDetector) {
+    public Metal(GridPosition gridPosition)  {
 
-        super(gridPosition, TrashType.METAL, collisionDetector);
+        super(gridPosition, TrashType.METAL);
     }
 
     @Override

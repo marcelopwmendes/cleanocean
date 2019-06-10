@@ -25,7 +25,7 @@ public class Game {
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
-
+    private CollisionDetector collisionDetector;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
         grid = GridFactory.makeGrid(gridType, cols, rows);
@@ -42,9 +42,7 @@ public class Game {
         obstacles = new Obstacle[obstacleQuantity];
         ecos = new Eco[ecoQuantity];
 
-        CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid);
-
-        int col = 79;
+        int col = Main.COLS - 1;
         int row = 0;
         for (int i = 0; i < ecos.length; i++) {
             ecos[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
@@ -62,8 +60,12 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1));
+        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
+
+        collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
+
         player.setCollisionDetector(collisionDetector);
+
 
     }
 
@@ -81,13 +83,18 @@ public class Game {
 
         while (true) {
             for (Trash t : trashes) {
-                t.move();
+                if (!t.getPicked()) {
+                    if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
+                        t.move();
+                        //if (collisionDetector.detectPlayer(t.getPosition(), t.getDirection())) {
+                        //    player.pickTrash(t);
+                        //}
+                    }
+                }
             }
 
             Thread.sleep(delay);
         }
     }
-
-
 
 }

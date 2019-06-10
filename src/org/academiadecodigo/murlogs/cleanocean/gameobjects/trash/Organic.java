@@ -5,9 +5,9 @@ import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 public class Organic extends Trash implements Movable {
 
-    public Organic(GridPosition gridPosition, CollisionDetector collisionDetector) {
+    public Organic(GridPosition gridPosition) {
 
-        super(gridPosition, TrashType.ORGANIC, collisionDetector);
+        super(gridPosition, TrashType.ORGANIC);
     }
 
     @Override

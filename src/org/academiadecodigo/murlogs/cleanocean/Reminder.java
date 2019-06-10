@@ -12,7 +12,7 @@ public class Reminder {
     Toolkit toolkit;
     int minutes = 10;
     int seconds = 00;
-    Text text = new Text(0, 0, minutes + ":" + seconds);
+    Text text = new Text(10, 10, minutes + ":" + seconds);
 
     public Reminder(int seconds) {
         toolkit = Toolkit.getDefaultToolkit();
@@ -22,24 +22,24 @@ public class Reminder {
     }
 
     class RemindTask extends TimerTask {
-        int numWarningBeeps = 10;
+        int numWarningBeeps = 600000;
 
         @Override
         public void run() {
             text.setColor(Color.RED);
             text.draw();
             if (numWarningBeeps > 0) {
-                toolkit.beep();
+                //toolkit.beep();
                 numWarningBeeps--;
-                if (minutes == 0) {
-                    text.setText("Fodasse");
-                    return;
-                }
                 if (seconds != 0) {
                     text.delete();
                     seconds--;
                     text.draw();
-                    text.setText(minutes + ":" + seconds);
+                    if (seconds >= 10) {
+                        text.setText(minutes + ":" + seconds);
+                        return;
+                    }
+                    text.setText(minutes + ":0" + seconds);
                     return;
                 }
 
@@ -51,8 +51,13 @@ public class Reminder {
                 }
 
             }
+            text.translate(40, 22);
+            text.setText("Game Over");
+            text.draw();
 
+            System.exit(0);
         }
+
     }
 
 
