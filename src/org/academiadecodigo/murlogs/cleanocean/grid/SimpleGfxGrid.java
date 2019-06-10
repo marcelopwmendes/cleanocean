@@ -73,4 +73,8 @@ public class SimpleGfxGrid implements Grid {
     public int columnToX(int column){
         return PADDING + column * CELLSIZE;
     }
+
+    public static int getPADDING() {
+        return PADDING;
+    }
 }
