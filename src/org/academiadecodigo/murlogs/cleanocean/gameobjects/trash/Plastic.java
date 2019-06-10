@@ -9,9 +9,9 @@ public class Plastic extends Trash implements Movable {
     private final static int SPEED = 3;
     private int counter = 0;
 
-    public Plastic(GridPosition gridPosition, CollisionDetector collisionDetector) {
+    public Plastic(GridPosition gridPosition) {
 
-        super(gridPosition, TrashType.PLASTIC, collisionDetector);
+        super(gridPosition, TrashType.PLASTIC);
     }
 
 

@@ -89,15 +89,9 @@ public class Player implements KeyboardHandler {
 
         Trash trash = collisionDetector.detectTrash(position, direction);
         if (trash != null) {
-            if (CAPACITY <= (trash.getTrashType().getWeight() + trashWeight)) {
-                System.out.println("FULL");
-                return;
-            }
-            trash.setPicked();
-            addTrash(trash.getTrashType());
-            System.out.println(trashWeight);
-            //trashWeight++;
+            pickTrash(trash);
         }
+
         position.moveInDirection(direction, 1);
         if (getPosition().getRow() == 1 && getPosition().getCol() > 74) {
             int points = 0;
@@ -108,11 +102,17 @@ public class Player implements KeyboardHandler {
             setScore(points);
             System.out.println(getScore());
         }
-
-
-
     }
 
+    public void pickTrash(Trash trash) {
+        if (CAPACITY <= (trash.getTrashType().getWeight() + trashWeight)) {
+            System.out.println("FULL");
+            return;
+        }
+        trash.setPicked();
+        addTrash(trash.getTrashType());
+        System.out.println(trashWeight);
+    }
 
     public void setCollisionDetector(CollisionDetector collisionDetector) {
         this.collisionDetector = collisionDetector;

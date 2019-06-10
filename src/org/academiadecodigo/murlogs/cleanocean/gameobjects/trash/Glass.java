@@ -5,9 +5,9 @@ import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 public class Glass extends Trash implements Movable {
 
-    public Glass(GridPosition gridPosition, CollisionDetector collisionDetector) {
+    public Glass(GridPosition gridPosition) {
 
-        super(gridPosition, TrashType.GLASS, collisionDetector);
+        super(gridPosition, TrashType.GLASS);
     }
 
     @Override

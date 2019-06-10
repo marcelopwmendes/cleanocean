@@ -13,14 +13,12 @@ public abstract class Trash {
     private Grid grid;
     private TrashType trashType;
     private boolean picked;
-    private CollisionDetector collisionDetector;
 
     protected GridDirection currentDirection = GridDirection.UP;
 
-    public Trash(GridPosition position, TrashType trashType, CollisionDetector collisionDetector) {
+    public Trash(GridPosition position, TrashType trashType) {
         this.trashType = trashType;
         this.position = position;
-        this.collisionDetector = collisionDetector;
         picked = false;
         setTrashColor(trashType);
 
@@ -46,40 +44,19 @@ public abstract class Trash {
         }
     }
 
+    public GridDirection chooseDirection() {
 
-    public boolean isHittingWall() {
-
-        switch (currentDirection) {
-            case LEFT:
-                if (position.getCol() == 0) {
-                    return true;
-                }
-                break;
-            case RIGHT:
-                if (position.getCol() == grid.getCols() - 1) {
-                    return true;
-                }
-                break;
-            case UP:
-                if (position.getRow() == 0) {
-                    return true;
-                }
-                break;
-            case DOWN:
-                if (position.getRow() == grid.getRows() - 1) {
-                    return true;
-                }
-        }
-
-        return false;
+        return GridDirection.values()[(int) (Math.random() * GridDirection.values().length)];
 
     }
-
 
     public GridPosition getPosition() {
         return position;
     }
 
+    public GridDirection getDirection() {
+        return currentDirection;
+    }
 
     public TrashType getTrashType() {
         return trashType;

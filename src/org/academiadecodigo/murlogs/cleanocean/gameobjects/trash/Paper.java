@@ -10,16 +10,16 @@ public class Paper extends Trash implements Movable {
     private final static int SPEED = 3;
     private int counter = 0;
 
-    public Paper(GridPosition gridPosition, CollisionDetector collisionDetector) {
+    public Paper(GridPosition gridPosition ) {
 
-        super(gridPosition, TrashType.PAPER, collisionDetector);
+        super(gridPosition, TrashType.PAPER);
     }
 
     @Override
     public void move() {
         counter++;
         //System.out.println("Moving...");
-        if (counter % 2 == 0) {
+        if (counter % 4 == 0) {
             accelerate(chooseDirection(), Paper.SPEED);
         }
     }
