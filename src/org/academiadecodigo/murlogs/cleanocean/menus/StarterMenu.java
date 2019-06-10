@@ -1,6 +1,7 @@
 package org.academiadecodigo.murlogs.cleanocean.menus;
 
 import org.academiadecodigo.murlogs.cleanocean.Game;
+import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.SimpleGfxGrid;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -17,12 +18,19 @@ public class StarterMenu implements KeyboardHandler {
     Picture reverseMenuSelector;
     Picture background;
 
+    SimpleGfxGrid gfxGrid;
+
+    private Grid grid;
     private Game game;
 
-    Keyboard keyboard;
+    Keyboard keyboard = new Keyboard(this);
     KeyboardEvent left;
     KeyboardEvent right;
     KeyboardEvent select;
+
+    public StarterMenu(Game game) {
+        this.game = game;
+    }
 
     public void starterMenu() {
 
@@ -76,10 +84,7 @@ public class StarterMenu implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
-        System.out.println("sadsdasd");
-
-
-
+        System.out.println("Testing...");
 
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_A:
@@ -94,6 +99,8 @@ public class StarterMenu implements KeyboardHandler {
                 break;
             case KeyboardEvent.KEY_SPACE:
                 if (current == play) {
+                   keyboard.removeEventListener(left);
+                   keyboard.removeEventListener(right);
                     game.init();
                 }
                 break;
@@ -104,5 +111,7 @@ public class StarterMenu implements KeyboardHandler {
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
     }
+
+
 
 }

@@ -7,6 +7,7 @@ import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
+import org.academiadecodigo.murlogs.cleanocean.menus.StarterMenu;
 //import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 
@@ -19,6 +20,7 @@ public class Game {
     private Obstacle[] obstacles;
     private Eco[] ecos;
     private Reminder reminder;
+    private StarterMenu starterMenu;
 
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
@@ -70,7 +72,9 @@ public class Game {
 
         System.out.println("Starting CleanOcean...");
 
-        init();
+        //init();
+        starterMenu = new StarterMenu(this);
+        starterMenu.starterMenu();
 
         reminder = new Reminder(1);
         System.out.println("Task scheduled.");
@@ -83,6 +87,7 @@ public class Game {
             Thread.sleep(delay);
         }
     }
+
 
 
 }
