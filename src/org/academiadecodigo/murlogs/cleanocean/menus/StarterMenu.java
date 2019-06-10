@@ -22,6 +22,7 @@ public class StarterMenu implements KeyboardHandler {
 
     private Grid grid;
     private Game game;
+    private HelpMenu helpMenu = new HelpMenu(game);
 
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent left;
@@ -98,10 +99,17 @@ public class StarterMenu implements KeyboardHandler {
                 current = help;
                 break;
             case KeyboardEvent.KEY_SPACE:
+
+
                 if (current == play) {
-                   keyboard.removeEventListener(left);
-                   keyboard.removeEventListener(right);
                     game.init();
+                    keyboard.removeEventListener(left);
+                    keyboard.removeEventListener(right);
+                }
+                if (current == help){
+                    helpMenu.helperMenu();
+                    keyboard.removeEventListener(left);
+                    keyboard.removeEventListener(right);
                 }
                 break;
         }
