@@ -38,7 +38,6 @@ public class HelpMenu implements KeyboardHandler {
     private Picture wExplained;
 
 
-    SimpleGfxGrid gfxGrid;
 
     private Grid grid;
     private Game game;
@@ -55,13 +54,14 @@ public class HelpMenu implements KeyboardHandler {
     KeyboardEvent releaseA;
     KeyboardEvent releaseS;
     KeyboardEvent releaseD;
+    KeyboardEvent releaseQ;
 
     public HelpMenu(Game game) {
         this.game = game;
     }
 
-    public void helperMenu() {
-
+    public void helperMenu(StarterMenu starterMenu) {
+        this.starterMenu = starterMenu;
 
         keyboardInit();
         // help menu
@@ -125,7 +125,7 @@ public class HelpMenu implements KeyboardHandler {
 
     public void keyboardInit() {
 
-        // Select right or left to choose play or help in the menu
+        // Select pressD or pressA to choose play or help in the menu
         pressW = new KeyboardEvent();
         pressW.setKey(KeyboardEvent.KEY_W);
         pressW.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -162,6 +162,9 @@ public class HelpMenu implements KeyboardHandler {
         releaseD.setKey(KeyboardEvent.KEY_D);
         releaseD.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
 
+        releaseQ = new KeyboardEvent();
+        releaseQ.setKey(KeyboardEvent.KEY_Q);
+        releaseQ.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
 
 
         keyboard.addEventListener(pressW);
@@ -181,7 +184,6 @@ public class HelpMenu implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-
 
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_W:
@@ -206,6 +208,11 @@ public class HelpMenu implements KeyboardHandler {
                 break;
             case KeyboardEvent.KEY_Q:
                 starterMenu.starterMenu();
+                keyboard.removeEventListener(pressA);
+                keyboard.removeEventListener(pressD);
+                keyboard.removeEventListener(pressS);
+                keyboard.removeEventListener(pressW);
+                keyboard.removeEventListener(pressQ);
                 break;
         }
 
@@ -235,8 +242,15 @@ public class HelpMenu implements KeyboardHandler {
                 dKeyRed.delete();
                 dKey.draw();
                 break;
-
+            case KeyboardEvent.KEY_Q:
+                keyboard.removeEventListener(releaseA);
+                keyboard.removeEventListener(releaseD);
+                keyboard.removeEventListener(releaseS);
+                keyboard.removeEventListener(releaseW);
+                keyboard.removeEventListener(releaseQ);
+                break;
         }
     }
+
 
 }
