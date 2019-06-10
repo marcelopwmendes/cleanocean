@@ -36,7 +36,7 @@ public class Eco {
 
 
     public int recycleTrash(int trashQuantity) {
-        return trashType.getScore()*trashQuantity;
+        return trashType.getScore() * trashQuantity;
     }
 
 

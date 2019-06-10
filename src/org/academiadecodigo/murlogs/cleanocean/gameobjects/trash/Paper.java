@@ -24,7 +24,7 @@ public class Paper extends Trash implements Movable {
         }
     }
 
-    public GridDirection xchooseDirection() {
+    public GridDirection chooseDirection() {
 
         return GridDirection.values()[(int) (Math.random() * GridDirection.values().length)];
 

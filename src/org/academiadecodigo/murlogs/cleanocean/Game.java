@@ -60,8 +60,10 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1));
+        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
         player.setCollisionDetector(collisionDetector);
+
+
 
     }
 

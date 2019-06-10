@@ -22,7 +22,7 @@ public class Player implements KeyboardHandler {
     private int score;
     private boolean inBeach;
     private Keyboard keyboard;
-
+    private Eco[] ecos;
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
@@ -30,12 +30,13 @@ public class Player implements KeyboardHandler {
     private CollisionDetector collisionDetector;
 
 
-    public Player(GridPosition pos) {
+    public Player(GridPosition pos, Eco[] ecos) {
         trash = new int[5];
         trashWeight = 0;
         score = 0;
         inBeach = true;
         position = pos;
+        this.ecos = ecos;
         pos.setColor(GridColor.GREEN);
         keyboard = new Keyboard(this);
         init();
@@ -82,12 +83,12 @@ public class Player implements KeyboardHandler {
         this.currentDirection = direction;
 
 
-        if (collisionDetector.detectObstacle(position, direction)  ) {
+        if (collisionDetector.detectObstacle(position, direction)) {
             return;
         }
 
         Trash trash = collisionDetector.detectTrash(position, direction);
-        if ( trash != null ) {
+        if (trash != null) {
             if (CAPACITY <= (trash.getTrashType().getWeight() + trashWeight)) {
                 System.out.println("FULL");
                 return;
@@ -98,6 +99,16 @@ public class Player implements KeyboardHandler {
             //trashWeight++;
         }
         position.moveInDirection(direction, 1);
+        if (getPosition().getRow() == 1 && getPosition().getCol() > 74) {
+            int points = 0;
+            for (int i = 0; i < ecos.length; i++) {
+                points += ecos[i].recycleTrash(getTrash()[i]);
+            }
+            clearTrash();
+            setScore(points);
+            System.out.println(getScore());
+        }
+
 
 
     }
@@ -181,6 +192,10 @@ public class Player implements KeyboardHandler {
                 break;
         }
 
+    }
+
+    public int[] getTrash() {
+        return trash;
     }
 
     public int getScore() {
