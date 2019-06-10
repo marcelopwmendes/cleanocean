@@ -57,7 +57,8 @@ public class CollisionDetector {
         }
 
         // Detect Eco
-        if ( (nextCol == Main.COLS - 1) && (nextRow < 5) ) {
+
+        if ( (nextCol > Main.COLS - 6) && (nextRow == 0) ) {
             return true;
         }
 
