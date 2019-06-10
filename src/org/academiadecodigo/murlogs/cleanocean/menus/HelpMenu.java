@@ -36,6 +36,7 @@ public class HelpMenu implements KeyboardHandler {
     private Picture wKey;
     private Picture wKeyRed;
     private Picture wExplained;
+    private Picture qToLeave;
 
 
 
@@ -114,6 +115,9 @@ public class HelpMenu implements KeyboardHandler {
         dKey = new Picture(225, 625, "D.png");
         dKey.draw();
         dKeyRed = new Picture(223, 623, "dRed.png");
+
+        qToLeave = new Picture(980, 690, "pressQToLeave.png");
+        qToLeave.draw();
 
 
         wExplained = new Picture(425, 550, "w to up.png");
