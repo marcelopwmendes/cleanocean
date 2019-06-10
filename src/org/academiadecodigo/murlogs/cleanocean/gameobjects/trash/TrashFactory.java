@@ -1,5 +1,6 @@
 package org.academiadecodigo.murlogs.cleanocean.gameobjects.trash;
 
+import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
 import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
@@ -8,7 +9,7 @@ import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 public class TrashFactory {
 
-    public static Trash makeTrash(Grid grid, Obstacle[] obstacles) {
+    public static Trash makeTrash(Grid grid, Obstacle[] obstacles, CollisionDetector collisionDetector) {
 
         GridPosition gridPosition;
         int col;
@@ -33,25 +34,25 @@ public class TrashFactory {
             }
         }
 
-        //gridPosition = grid.makeGridPosition(col, row);
+        //gridPosition = grid.makeGridPosition(col, row); collisionDetector
 
         Trash trash = null;
 
         switch (trashType) {
             case PAPER:
-                trash = new Paper(grid.makeGridPosition(col, row));
+                trash = new Paper(grid.makeGridPosition(col, row), collisionDetector);
                 break;
             case METAL:
-                trash = new Metal(grid.makeGridPosition(col, row));
+                trash = new Metal(grid.makeGridPosition(col, row), collisionDetector);
                 break;
             case PLASTIC:
-                trash = new Plastic(grid.makeGridPosition(col, row));
+                trash = new Plastic(grid.makeGridPosition(col, row), collisionDetector);
                 break;
             case GLASS:
-                trash = new Glass(grid.makeGridPosition(col, row));
+                trash = new Glass(grid.makeGridPosition(col, row), collisionDetector);
                 break;
             case ORGANIC:
-                trash = new Organic(grid.makeGridPosition(col, row));
+                trash = new Organic(grid.makeGridPosition(col, row), collisionDetector);
                 break;
         }
         return trash;

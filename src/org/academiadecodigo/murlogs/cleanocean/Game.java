@@ -39,6 +39,8 @@ public class Game {
         obstacles = new Obstacle[obstacleQuantity];
         ecos = new Eco[ecoQuantity];
 
+        CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid);
+
         int row = 0;
         for (int i = 0; i < ecos.length; i++) {
             ecos[i] = new Eco(grid.makeGridPosition(Main.COLS - 1, row), TrashType.values()[i]);
@@ -52,12 +54,9 @@ public class Game {
         }
 
         for (int i = 0; i < trashes.length; i++) {
-            trashes[i] = TrashFactory.makeTrash(grid, obstacles);
+            trashes[i] = TrashFactory.makeTrash(grid, obstacles, collisionDetector);
             trashes[i].setGrid(grid);
         }
-
-
-        CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid);
 
         player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1));
         player.setCollisionDetector(collisionDetector);
@@ -65,11 +64,23 @@ public class Game {
     }
 
 
-    public void start() {
+    public void start() throws InterruptedException {
 
         System.out.println("Starting CleanOcean...");
+
         init();
 
+        while (true) {
+            for (Trash t : trashes) {
+                t.move();
+            }
+
+            Thread.sleep(delay);
+        }
     }
+
+
+
+
 
 }
