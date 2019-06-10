@@ -34,17 +34,15 @@ public abstract class Trash {
 
         GridDirection newDirection = direction;
 
-        if (!isHittingWall()) {
 
-            currentDirection = newDirection;
+        currentDirection = newDirection;
 
-            for (int i = 0; i < speed; i++) {
-                position.moveInDirection(newDirection, 1);
+        for (int i = 0; i < speed; i++) {
+            position.moveInDirection(newDirection, 1);
                 /*if (collisionDetector.isUnSafe(position())) {
                     crash();
                     break;
                 }*/
-            }
         }
     }
 

@@ -18,6 +18,7 @@ public class Game {
     private Trash[] trashes;
     private Obstacle[] obstacles;
     private Eco[] ecos;
+    private Reminder reminder;
 
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
@@ -41,11 +42,12 @@ public class Game {
 
         CollisionDetector collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid);
 
+        int col = 79;
         int row = 0;
         for (int i = 0; i < ecos.length; i++) {
-            ecos[i] = new Eco(grid.makeGridPosition(Main.COLS - 1, row), TrashType.values()[i]);
+            ecos[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
             ecos[i].setGrid(grid);
-            row += 1;
+            col -= 1;
         }
 
         for (int i = 0; i < obstacles.length; i++) {
@@ -70,6 +72,9 @@ public class Game {
 
         init();
 
+        reminder = new Reminder(1);
+        System.out.println("Task scheduled.");
+
         while (true) {
             for (Trash t : trashes) {
                 t.move();
@@ -78,9 +83,6 @@ public class Game {
             Thread.sleep(delay);
         }
     }
-
-
-
 
 
 }

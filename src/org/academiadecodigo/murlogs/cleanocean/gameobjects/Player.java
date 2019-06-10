@@ -18,7 +18,7 @@ public class Player implements KeyboardHandler {
 
     private static final int CAPACITY = 25;
     private int[] trash;
-    private int trashCounter;
+    private int trashWeight;
     private int score;
     private boolean inBeach;
     private Keyboard keyboard;
@@ -32,7 +32,7 @@ public class Player implements KeyboardHandler {
 
     public Player(GridPosition pos) {
         trash = new int[5];
-        trashCounter = 0;
+        trashWeight = 0;
         score = 0;
         inBeach = true;
         position = pos;
@@ -88,13 +88,16 @@ public class Player implements KeyboardHandler {
 
         Trash trash = collisionDetector.detectTrash(position, direction);
         if ( trash != null ) {
+            if (CAPACITY <= (trash.getTrashType().getWeight() + trashWeight)) {
+                System.out.println("FULL");
+                return;
+            }
             trash.setPicked();
-            //trashCounter++;
+            addTrash(trash.getTrashType());
+            System.out.println(trashWeight);
+            //trashWeight++;
         }
-
-
         position.moveInDirection(direction, 1);
-
 
 
     }
@@ -134,7 +137,7 @@ public class Player implements KeyboardHandler {
     }
 
     public void clearTrash() {
-        trashCounter = 0;
+        trashWeight = 0;
         for (int i = 0; i < trash.length; i++) {
             trash[i] = 0;
         }
@@ -148,34 +151,33 @@ public class Player implements KeyboardHandler {
 
         switch (trashType) {
             case PAPER:
-                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
-                    trash[0] += trashType.getWeight();
-                    trashCounter = trashType.getWeight();
-                }
+                trash[0]++;
+                trashWeight += trashType.getWeight();
+                System.out.println(trash[0]);
                 break;
+
             case METAL:
-                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
-                    trash[1] += trashType.getWeight();
-                    trashCounter = trashType.getWeight();
-                }
+                trash[1]++;
+                trashWeight += trashType.getWeight();
+                System.out.println(trash[1]);
                 break;
+
             case PLASTIC:
-                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
-                    trash[2] += trashType.getWeight();
-                    trashCounter = trashType.getWeight();
-                }
+                trash[2]++;
+                trashWeight += trashType.getWeight();
+                System.out.println(trash[2]);
                 break;
+
             case GLASS:
-                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
-                    trash[3] += trashType.getWeight();
-                    trashCounter = trashType.getWeight();
-                }
+                trash[3]++;
+                trashWeight += trashType.getWeight();
+                System.out.println(trash[3]);
                 break;
+
             case ORGANIC:
-                if (CAPACITY < (trashType.getWeight() + trashCounter)) {
-                    trash[4] += trashType.getWeight();
-                    trashCounter = trashType.getWeight();
-                }
+                trash[4]++;
+                trashWeight += trashType.getWeight();
+                System.out.println(trash[4]);
                 break;
         }
 
