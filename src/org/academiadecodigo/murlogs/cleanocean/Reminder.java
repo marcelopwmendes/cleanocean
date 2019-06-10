@@ -22,7 +22,7 @@ public class Reminder {
     }
 
     class RemindTask extends TimerTask {
-        int numWarningBeeps = 10;
+        int numWarningBeeps = 0;
 
         @Override
         public void run() {
