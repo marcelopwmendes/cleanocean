@@ -1,6 +1,5 @@
 package org.academiadecodigo.murlogs.cleanocean.gameobjects.trash;
 
-import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
@@ -24,6 +23,7 @@ public class Paper extends Trash implements Movable {
         }
     }
 
+    @Override
     public GridDirection chooseDirection() {
 
         return GridDirection.values()[(int) (Math.random() * GridDirection.values().length)];
