@@ -12,6 +12,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class HelpMenu implements KeyboardHandler {
 
 
+    //FALTA meter um boneco a olhar para cima/baixo/esq/dir consoante as teclas e mudar o texto da descrição
+
     private Picture background;
     private Picture reverseMenuSelector;
 
@@ -37,6 +39,7 @@ public class HelpMenu implements KeyboardHandler {
     private Picture wKeyRed;
     private Picture wExplained;
     private Picture qToLeave;
+    private Picture press;
 
 
 
@@ -100,36 +103,38 @@ public class HelpMenu implements KeyboardHandler {
 
         reverseMenuSelector = new Picture(677, 520, "menu selector reversed.png");
 
-        wKey = new Picture(175, 575, "W.png");
+        press = new Picture( 25,575,"Press.png");
+        press.draw();
+
+        wKey = new Picture(225, 575, "W.png");
         wKey.draw();
-        wKeyRed = new Picture(175, 575, "wRed.png");
+        wKeyRed = new Picture(225, 575, "wRed.png");
 
-        aKey = new Picture(125, 625, "A.png");
+        aKey = new Picture(175, 625, "A.png");
         aKey.draw();
-        aKeyRed = new Picture(123, 623, "aRed.png");
+        aKeyRed = new Picture(173, 623, "aRed.png");
 
-        sKey = new Picture(175, 625, "S.png");
+        sKey = new Picture(225, 625, "S.png");
         sKey.draw();
-        sKeyRed = new Picture(173, 623, "sRed.png");
+        sKeyRed = new Picture(223, 623, "sRed.png");
 
-        dKey = new Picture(225, 625, "D.png");
+        dKey = new Picture(275, 625, "D.png");
         dKey.draw();
-        dKeyRed = new Picture(223, 623, "dRed.png");
+        dKeyRed = new Picture(273, 623, "dRed.png");
 
         qToLeave = new Picture(980, 690, "pressQToLeave.png");
         qToLeave.draw();
 
 
-        wExplained = new Picture(425, 550, "w to up.png");
-        aExplained = new Picture(375, 600, "a to left.png");
-        dExplained = new Picture(475, 650, "d to right.png");
-        sExplained = new Picture(425, 700, "s to down.png");
+        wExplained = new Picture(525, 585, "w to up.png");
+        aExplained = new Picture(375, 625, "a to left.png");
+        dExplained = new Picture(650, 625, "d to right.png");
+        sExplained = new Picture(500, 650, "s to down.png");
     }
 
 
     public void keyboardInit() {
 
-        // Select pressD or pressA to choose play or help in the menu
         pressW = new KeyboardEvent();
         pressW.setKey(KeyboardEvent.KEY_W);
         pressW.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
