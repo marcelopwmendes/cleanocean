@@ -90,11 +90,13 @@ public class Player implements KeyboardHandler {
         }
 
         Trash trash = collisionDetector.detectTrash(position, direction);
-        if (trash != null) {
+        if (trash != null && !trash.getPicked()) {
             pickTrash(trash);
         }
 
         position.moveInDirection(direction, 1);
+
+
         if (getPosition().getRow() == 1 && getPosition().getCol() > 74) {
             int points = 0;
             for (int i = 0; i < ecos.length; i++) {
@@ -104,6 +106,8 @@ public class Player implements KeyboardHandler {
             setScore(points);
             System.out.println(getScore());
         }
+
+
     }
 
     public void pickTrash(Trash trash) {
