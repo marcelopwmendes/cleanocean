@@ -7,6 +7,7 @@ import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
+import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 //import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 
@@ -43,7 +44,7 @@ public class Game {
         int col = 79;
         int row = 0;
         for (int i = 0; i < ecos.length; i++) {
-            ecos[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
+            ecos[i] = new Eco(grid.makeGridPosition(col, row, "teste.png"), TrashType.values()[i]);
             ecos[i].setGrid(grid);
             col -= 1;
         }
@@ -58,7 +59,9 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 4, Main.ROWS - 4, "cleaningBoy50%Left.png");
+        player = new Player(gridPosition, ecos);
+
 
         collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
 

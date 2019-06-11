@@ -28,20 +28,19 @@ public abstract class Trash {
     public abstract void move();
 
 
-    public void accelerate(GridDirection direction, int speed) {
+    public void accelerate(GridDirection direction) {
 
         GridDirection newDirection = direction;
 
 
         currentDirection = newDirection;
 
-        for (int i = 0; i < speed; i++) {
-            position.moveInDirection(newDirection, 1);
+        position.moveInDirection(newDirection, 1);
                 /*if (collisionDetector.isUnSafe(position())) {
                     crash();
                     break;
                 }*/
-        }
+
     }
 
     public GridDirection chooseDirection() {

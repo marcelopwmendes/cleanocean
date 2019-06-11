@@ -40,19 +40,19 @@ public class TrashFactory {
 
         switch (trashType) {
             case PAPER:
-                trash = new Paper(grid.makeGridPosition(col, row));
+                trash = new Paper(grid.makeGridPosition(col, row, "Shell.png"));
                 break;
             case METAL:
-                trash = new Metal(grid.makeGridPosition(col, row));
+                trash = new Metal(grid.makeGridPosition(col, row, "Shell.png"));
                 break;
             case PLASTIC:
-                trash = new Plastic(grid.makeGridPosition(col, row));
+                trash = new Plastic(grid.makeGridPosition(col, row, "Shell.png"));
                 break;
             case GLASS:
-                trash = new Glass(grid.makeGridPosition(col, row));
+                trash = new Glass(grid.makeGridPosition(col, row, "Shell.png"));
                 break;
             case ORGANIC:
-                trash = new Organic(grid.makeGridPosition(col, row));
+                trash = new Organic(grid.makeGridPosition(col, row, "Shell.png"));
                 break;
         }
         return trash;

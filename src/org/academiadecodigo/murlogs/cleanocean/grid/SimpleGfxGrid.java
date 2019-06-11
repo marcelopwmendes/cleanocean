@@ -1,7 +1,6 @@
 package org.academiadecodigo.murlogs.cleanocean.grid;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class SimpleGfxGrid implements Grid {
@@ -58,12 +57,14 @@ public class SimpleGfxGrid implements Grid {
 
     @Override
     public GridPosition makeGridPosition() {
-        return new SimpleGfxPosition(this);
+        // obstacle draw
+        return new SimpleGfxPosition(this, "Shell.png");
     }
 
     @Override
-    public GridPosition makeGridPosition(int col, int row) {
-        return new SimpleGfxPosition(col, row, this);
+    public GridPosition makeGridPosition(int col, int row, String picture) {
+
+        return new SimpleGfxPosition(col, row, this, picture);
     }
 
     public int rowToY(int row) {

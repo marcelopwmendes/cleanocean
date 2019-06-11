@@ -12,6 +12,7 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 //TESTE PARA VER SE O GIT DEIXA O DANILO BRINCAR
 public class Player implements KeyboardHandler {
@@ -26,6 +27,7 @@ public class Player implements KeyboardHandler {
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
+    //private String pic = "girl_front_stopped.png";
 
     private CollisionDetector collisionDetector;
 
