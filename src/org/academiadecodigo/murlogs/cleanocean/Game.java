@@ -41,12 +41,10 @@ public class Game {
         obstacles = new Obstacle[obstacleQuantity];
         ecos = new Eco[ecoQuantity];
 
-        int col = Main.COLS - 1;
-        int row = 0;
+
         for (int i = 0; i < ecos.length; i++) {
-            ecos[i] = new Eco(grid.makeGridPosition(col, row, "teste.png"), TrashType.values()[i]);
+            ecos[i] = EcoFactory.makeEco(grid);
             ecos[i].setGrid(grid);
-            col -= 1;
         }
 
         for (int i = 0; i < obstacles.length; i++) {
@@ -59,7 +57,7 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 4, Main.ROWS - 4, "cleaningBoy50%Left.png");
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, "pig40.png");
         player = new Player(gridPosition, ecos);
 
 

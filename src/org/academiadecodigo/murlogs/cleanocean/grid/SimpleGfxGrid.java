@@ -6,7 +6,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class SimpleGfxGrid implements Grid {
 
     public static final int PADDING = 10;
-    private static final int CELLSIZE = 16;
+    private static final int CELLSIZE = 40;
     private int cols;
     private int rows;
     //private Rectangle rectangle;
@@ -58,7 +58,7 @@ public class SimpleGfxGrid implements Grid {
     @Override
     public GridPosition makeGridPosition() {
         // obstacle draw
-        return new SimpleGfxPosition(this, "Shell.png");
+        return new SimpleGfxPosition(this, "obstacleTreeTile40.png");
     }
 
     @Override
