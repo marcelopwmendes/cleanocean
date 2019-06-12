@@ -2,6 +2,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
+import org.academiadecodigo.murlogs.cleanocean.Game;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
@@ -102,7 +103,8 @@ public class Player implements KeyboardHandler {
             }
             clearTrash();
             setScore(points);
-            System.out.println(getScore());
+            Game.score.setText("SCORE: " + score);
+            //System.out.println(getScore());
         }
 
 
@@ -156,6 +158,12 @@ public class Player implements KeyboardHandler {
         for (int i = 0; i < trash.length; i++) {
             trash[i] = 0;
         }
+        Game.paper.setText("PAPER: " + trash[0]);
+        Game.metal.setText("METAL: " + trash[1]);
+        Game.plastic.setText("PLASTIC: " + trash[2]);
+        Game.glass.setText("GLASS: " + trash[3]);
+        Game.organic.setText("ORGANIC: " + trash[4]);
+        Game.weight.setText("WEIGHT: " + trashWeight + " /25");
     }
 
     public int[] recycle() {
@@ -168,34 +176,40 @@ public class Player implements KeyboardHandler {
             case PAPER:
                 trash[0]++;
                 trashWeight += trashType.getWeight();
+                Game.paper.setText("PAPER: " + trash[0]);
                 System.out.println(trash[0]);
                 break;
 
             case METAL:
                 trash[1]++;
                 trashWeight += trashType.getWeight();
+                Game.metal.setText("METAL: " + trash[1]);
                 System.out.println(trash[1]);
                 break;
 
             case PLASTIC:
                 trash[2]++;
                 trashWeight += trashType.getWeight();
+                Game.plastic.setText("PLASTIC: " + trash[2]);
                 System.out.println(trash[2]);
                 break;
 
             case GLASS:
                 trash[3]++;
                 trashWeight += trashType.getWeight();
+                Game.glass.setText("GLASS: " + trash[3]);
                 System.out.println(trash[3]);
                 break;
 
             case ORGANIC:
                 trash[4]++;
                 trashWeight += trashType.getWeight();
+                Game.organic.setText("ORGANIC: " + trash[4]);
                 System.out.println(trash[4]);
                 break;
         }
 
+        Game.weight.setText("WEIGHT: " + trashWeight + " /25");
     }
 
     public int[] getTrash() {
