@@ -1,6 +1,7 @@
 package org.academiadecodigo.murlogs.cleanocean.grid;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public interface Grid {
 
@@ -15,7 +16,7 @@ public interface Grid {
 
     GridPosition makeGridPosition(int col, int row);
 
-
+     void setBackgroundSand(String s);
 
 
 

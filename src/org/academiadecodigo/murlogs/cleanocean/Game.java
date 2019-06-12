@@ -1,6 +1,7 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Movable;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
@@ -20,12 +21,16 @@ public class Game {
     private Obstacle[] obstacles;
     private Eco[] ecos;
     private Reminder reminder;
-    private StarterMenu starterMenu;
+    private StarterMenu starterMenu = new StarterMenu(this);
+    private boolean play = false;
+    ;
 
-    private int trashQuantity = 20;
-    private int obstacleQuantity = 10;
+    private int trashQuantity = 1;
+    private int obstacleQuantity = 0;
     private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
+
+    int countTrash = 0;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
         grid = GridFactory.makeGrid(gridType, cols, rows);
@@ -56,6 +61,7 @@ public class Game {
         }
 
         for (int i = 0; i < trashes.length; i++) {
+
             trashes[i] = TrashFactory.makeTrash(grid, obstacles, collisionDetector);
             trashes[i].setGrid(grid);
         }
@@ -66,35 +72,58 @@ public class Game {
 
         player.setCollisionDetector(collisionDetector);
 
+        play = true;
 
     }
+
 
 
     public void start() throws InterruptedException {
 
         System.out.println("Starting CleanOcean...");
 
-        //init();
-        starterMenu = new StarterMenu(this);
         starterMenu.starterMenu();
+        //init();
+
+        while (!play) {
+            Thread.sleep(500);
+        }
 
         reminder = new Reminder(1);
         System.out.println("Task scheduled.");
 
-        while (true) {
+        boolean flag = true;
+        while (flag) {
             for (Trash t : trashes) {
                 if (!t.getPicked()) {
-                    if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
+                    if (t instanceof Movable) {
                         t.move();
-                        //if (collisionDetector.detectPlayer(t.getPosition(), t.getDirection())) {
-                        //    player.pickTrash(t);
                         //}
+                        // if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
+                        //   t.move();
+
+                    }
+                }
+                if (t.getPicked()) {
+                    countTrash++;
+                    if (countTrash >= trashes.length) {
+                        countTrash = trashes.length;
+                        if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
+                            player.setInBeach(false);
+                            grid.setBackgroundSand("Ocean.png");
+                            flag = false;
+
+                        }
                     }
                 }
             }
-
             Thread.sleep(delay);
         }
+
     }
 
+
 }
+
+
+

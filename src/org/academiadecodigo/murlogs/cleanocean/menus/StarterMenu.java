@@ -94,12 +94,12 @@ public class StarterMenu implements KeyboardHandler {
 
     }
 
-    Picture current;
+
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
-
+        Picture current = play;
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_A:
                 reverseMenuSelector.delete();
@@ -127,16 +127,17 @@ public class StarterMenu implements KeyboardHandler {
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
-
+        Picture current = play;
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_SPACE:
                 if (current == play) {
-                    game.init();
+
                     keyboard.removeEventListener(pressA);
                     keyboard.removeEventListener(pressD);
                     keyboard.removeEventListener(pressSpace);
                     keyboard.removeEventListener(releaseSpace);
-
+                    game.init();
+                    break;
                 }
                 if (current == help) {
                     helpMenu.helperMenu(this);
