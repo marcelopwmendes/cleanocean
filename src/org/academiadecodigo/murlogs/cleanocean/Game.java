@@ -23,7 +23,9 @@ public class Game {
     private Reminder reminder;
     private StarterMenu starterMenu = new StarterMenu(this);
     private boolean play = false;
-    ;
+    private int cols;
+    private int rows;
+
 
     private int trashQuantity = 1;
     private int obstacleQuantity = 0;
@@ -33,7 +35,9 @@ public class Game {
     int countTrash = 0;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
-        grid = GridFactory.makeGrid(gridType, cols, rows);
+        grid = GridFactory.makeGrid(gridType, cols, rows, "Sand.png");
+        this.cols = cols;
+        this.rows = rows;
         this.delay = delay;
     }
 
@@ -66,7 +70,7 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
+        this.player = new Player(grid, grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
 
         collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
 
@@ -75,7 +79,6 @@ public class Game {
         play = true;
 
     }
-
 
 
     public void start() throws InterruptedException {
@@ -110,7 +113,8 @@ public class Game {
                         countTrash = trashes.length;
                         if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
                             player.setInBeach(false);
-                            grid.setBackgroundSand("Ocean.png");
+                            GameOcean gameOcean = new GameOcean(GridType.SIMPLE_GFX, cols, rows, delay, player.getScore());
+                            gameOcean.start();
                             flag = false;
 
                         }

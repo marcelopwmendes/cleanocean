@@ -44,8 +44,6 @@ public class CollisionDetector {
 */
 
 
-
-
     public boolean detectObstacle(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = getNextPosition(position, direction);
@@ -54,17 +52,18 @@ public class CollisionDetector {
         int nextRow = nextPosition[1];
 
         for (Obstacle o : obstacles) {
-            if ( (o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow) ) {
+            if ((o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow)) {
                 return true;
             }
         }
 
         // Detect Eco
-
-        if ( (nextCol > Main.COLS - 6) && (nextRow == 0) ) {
-            return true;
+        if (player.isInBeach()) {
+            if ((nextCol > Main.COLS - 6) && (nextRow == 0)) {
+                return true;
+            }
+            return false;
         }
-
         return false;
     }
 
@@ -76,7 +75,7 @@ public class CollisionDetector {
         int nextRow = nextPosition[1];
 
         for (Trash t : trashes) {
-            if ( (t.getPosition().getCol() == nextCol) && (t.getPosition().getRow() == nextRow) ) {
+            if ((t.getPosition().getCol() == nextCol) && (t.getPosition().getRow() == nextRow)) {
                 return t;
             }
         }
@@ -127,7 +126,6 @@ public class CollisionDetector {
     }
 
 
-
     private int[] moveUp(GridPosition position) {
         int[] nextPosition = new int[2];
         nextPosition[0] = position.getCol();
@@ -155,11 +153,6 @@ public class CollisionDetector {
         nextPosition[1] = position.getRow();
         return nextPosition;
     }
-
-
-
-
-
 
 
 }

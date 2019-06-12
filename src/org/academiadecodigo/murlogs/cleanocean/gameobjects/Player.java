@@ -2,6 +2,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
+import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
@@ -17,11 +18,11 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 public class Player implements KeyboardHandler {
 
     private static final int CAPACITY = 25;
-    private int[] trash;
-    private int trashWeight;
-    private int score;
-    private boolean inBeach;
-    private Keyboard keyboard;
+    private int[] trash = new int[5];
+    private int trashWeight = 0;
+    private int score = 0;
+    private boolean inBeach = true;
+    private Keyboard keyboard;//= new Keyboard(this);
     private Eco[] ecos;
     private GridPosition position;
     protected GridDirection currentDirection;
@@ -30,19 +31,23 @@ public class Player implements KeyboardHandler {
     private CollisionDetector collisionDetector;
 
 
-    public Player(GridPosition pos, Eco[] ecos) {
+    public Player(Grid grid, GridPosition pos, Eco[] ecos) {
         trash = new int[5];
         trashWeight = 0;
         score = 0;
         inBeach = true;
         position = pos;
         this.ecos = ecos;
-        pos.setColor(GridColor.GREEN);
+        position.setColor(GridColor.GREEN);
+        this.grid = grid;
         keyboard = new Keyboard(this);
         init();
     }
 
+
     public void init() {
+
+        position.setColor(GridColor.GREEN);
         KeyboardEvent up = new KeyboardEvent();
         up.setKey(KeyboardEvent.KEY_W);
         up.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -133,17 +138,21 @@ public class Player implements KeyboardHandler {
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_W:
                 //up
+                System.out.println("UP");
                 currentDirection = GridDirection.UP;
                 break;
             case KeyboardEvent.KEY_A:
                 //left
+                System.out.println("UP");
                 currentDirection = GridDirection.LEFT;
                 break;
             case KeyboardEvent.KEY_S:
+                System.out.println("UP");
                 //down
                 currentDirection = GridDirection.DOWN;
                 break;
             case KeyboardEvent.KEY_D:
+                System.out.println("UP");
                 //right
                 currentDirection = GridDirection.RIGHT;
                 break;
@@ -228,5 +237,8 @@ public class Player implements KeyboardHandler {
         this.grid = grid;
     }
 
+    public void translate() {
+        grid.makeGridPosition(Main.COLS - 1, 0);
+    }
 
 }

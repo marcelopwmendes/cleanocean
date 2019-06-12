@@ -14,11 +14,11 @@ public class SimpleGfxGrid implements Grid {
     private Picture backgroundSand;
 
 
-    public SimpleGfxGrid(int cols, int rows) {
+    public SimpleGfxGrid(int cols, int rows, String s) {
         this.cols = cols;
         this.rows = rows;
         //this.rectangle = new Rectangle(PADDING, PADDING, CELLSIZE * cols, CELLSIZE * rows);
-        this.backgroundSand = new Picture(PADDING, PADDING, "Sand.png");
+        this.backgroundSand = new Picture(PADDING, PADDING, s);
 
     }
 
