@@ -1,9 +1,7 @@
-package org.academiadecodigo.murlogs.cleanocean.gameobjects;
+package org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles;
 
 import org.academiadecodigo.murlogs.cleanocean.Main;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.*;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
-import org.academiadecodigo.murlogs.cleanocean.grid.SimpleGfxGrid;
 
 // "Factory" that creates the collidable objects.
 // Vamos precisar das dimensões certas para poder criar os objectos certos no sítio certo -----------------------------
@@ -13,7 +11,8 @@ import org.academiadecodigo.murlogs.cleanocean.grid.SimpleGfxGrid;
 
 public class ObstacleFactory {
 
-    public static Obstacle makeObstacle(Grid grid) {
+    /** Create different obstacles in the beach */
+    public static Obstacle makeBeachObstacle(Grid grid) {
 
         int col;
         int row;
@@ -22,7 +21,8 @@ public class ObstacleFactory {
         row = (int) (Math.random() * Main.ROWS);
         col = (int) (Math.random() * Main.COLS);
 
-        while ((col == Main.COLS - 1) && ((row == Main.ROWS - 1) || (row <= 4))) {
+
+        while ( ((col > Main.COLS - 6) && (row == 0)) || (row > Main.ROWS - 5)) {
             col = (int) (Math.random() * Main.COLS);
             row = (int) (Math.random() * Main.ROWS);
         }
@@ -35,16 +35,16 @@ public class ObstacleFactory {
 
         switch (landObstacle) {
             case SHELL:
-                obstacle = new Shell(grid.makeGridPosition());
+                obstacle = new Shell(grid.makeGridPosition(col, row, "Shell.png"));
                 break;
             case PEOPLESTUFF:
-                obstacle = new PeopleStuff(grid.makeGridPosition());
+                obstacle = new PeopleStuff(grid.makeGridPosition(col, row, "obstacleTowel40.png"));
                 break;
             case ROCK:
-                obstacle = new Rock(grid.makeGridPosition());
+                obstacle = new Rock(grid.makeGridPosition(col, row, "obstacleHouse40.png"));
                 break;
             case CRAB:
-                obstacle = new Crab(grid.makeGridPosition());
+                obstacle = new Crab(grid.makeGridPosition(col, row, "crab40.png"));
                 break;
             default:
                 obstacle = new Rock(grid.makeGridPosition());

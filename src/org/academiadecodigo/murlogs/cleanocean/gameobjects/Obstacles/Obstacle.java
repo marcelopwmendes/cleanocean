@@ -1,4 +1,4 @@
-package org.academiadecodigo.murlogs.cleanocean.gameobjects;
+package org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
@@ -11,7 +11,6 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
 
     public Obstacle(GridPosition pos) {
         this.position = pos;
-        pos.setColor(GridColor.RED);
     }
 
     public void setGrid(Grid grid) {
