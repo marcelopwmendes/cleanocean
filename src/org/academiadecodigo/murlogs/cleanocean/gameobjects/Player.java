@@ -13,6 +13,7 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 //TESTE PARA VER SE O GIT DEIXA O DANILO BRINCAR
 public class Player implements KeyboardHandler {
@@ -27,6 +28,7 @@ public class Player implements KeyboardHandler {
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
+    //private String pic = "girl_front_stopped.png";
 
     private CollisionDetector collisionDetector;
 
@@ -89,6 +91,7 @@ public class Player implements KeyboardHandler {
         }
 
         Trash trash = collisionDetector.detectTrash(position, direction);
+
         if (trash != null && !trash.getPicked()) {
             pickTrash(trash);
         }
@@ -96,7 +99,8 @@ public class Player implements KeyboardHandler {
         position.moveInDirection(direction, 1);
 
 
-        if (getPosition().getRow() == 1 && getPosition().getCol() > 74) {
+        // empty bagTrash
+        if (getPosition().getRow() == 1 && getPosition().getCol() > 27) {
             int points = 0;
             for (int i = 0; i < ecos.length; i++) {
                 points += ecos[i].recycleTrash(getTrash()[i]);
@@ -106,13 +110,11 @@ public class Player implements KeyboardHandler {
             Game.score.setText("SCORE: " + score);
             //System.out.println(getScore());
         }
-
-
     }
 
     public void pickTrash(Trash trash) {
-        if (CAPACITY <= (trash.getTrashType().getWeight() + trashWeight)) {
-            System.out.println("FULL");
+        if (CAPACITY < (trash.getTrashType().getWeight() + trashWeight)) {
+            Game.weight.setText("FULL");
             return;
         }
         trash.setPicked();

@@ -14,7 +14,7 @@ public interface Grid {
 
     GridPosition makeGridPosition();
 
-    GridPosition makeGridPosition(int col, int row);
+    GridPosition makeGridPosition(int col, int row, String picture);
 
      void setBackgroundSand(String s);
 

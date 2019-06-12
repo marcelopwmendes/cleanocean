@@ -4,13 +4,13 @@ import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Movable;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
 
 public class Game {
@@ -31,8 +31,8 @@ public class Game {
     public static Text paper;
     public static Text weight;
 
-    private int trashQuantity = 1;
-    private int obstacleQuantity = 0;
+    private int trashQuantity = 20;
+    private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
 
@@ -43,7 +43,7 @@ public class Game {
         this.delay = delay;
     }
 
-    public void inventory(){
+    public void inventory() {
         score = new Text(34, 30, "SCORE: " + 0);
         score.setColor(Color.RED);
         score.draw();
@@ -62,7 +62,7 @@ public class Game {
         paper = new Text(34, 90, "PAPER: " + 0);
         paper.setColor(Color.CYAN);
         paper.draw();
-        weight= new Text(25,110,"WEIGHT: " + 0 + " /25");
+        weight = new Text(25, 110, "WEIGHT: " + 0 + " /25");
         weight.setColor(Color.WHITE);
         weight.draw();
     }
@@ -85,10 +85,10 @@ public class Game {
 
         int col = Main.COLS - 1;
         int row = 0;
+
         for (int i = 0; i < ecos.length; i++) {
-            ecos[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
+            ecos[i] = EcoFactory.makeEco(grid);
             ecos[i].setGrid(grid);
-            col -= 1;
         }
 
         for (int i = 0; i < obstacles.length; i++) {
@@ -101,7 +101,9 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        player = new Player(grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, "pig40.png");
+        player = new Player(gridPosition, ecos);
+
 
         collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
 
@@ -144,11 +146,11 @@ public class Game {
                         }
                     }
                 }
+                countTrash = 0;
             }
             Thread.sleep(delay);
         }
     }
-
 
 
 }
