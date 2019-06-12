@@ -22,8 +22,8 @@ public class Game {
     private Eco[] ecos;
     private Reminder reminder;
 
-    private int trashQuantity = 1;
-    private int obstacleQuantity = 0;
+    private int trashQuantity = 20;
+    private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
 
