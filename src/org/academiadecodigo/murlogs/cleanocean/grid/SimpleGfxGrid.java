@@ -1,13 +1,12 @@
 package org.academiadecodigo.murlogs.cleanocean.grid;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class SimpleGfxGrid implements Grid {
 
     public static final int PADDING = 10;
-    private static final int CELLSIZE = 16;
+    private static final int CELLSIZE = 40;
     private int cols;
     private int rows;
     //private Rectangle rectangle;
@@ -64,12 +63,14 @@ public class SimpleGfxGrid implements Grid {
 
     @Override
     public GridPosition makeGridPosition() {
-        return new SimpleGfxPosition(this);
+        // obstacle draw
+        return new SimpleGfxPosition(this, "obstacleTreeTile40.png");
     }
 
     @Override
-    public GridPosition makeGridPosition(int col, int row) {
-        return new SimpleGfxPosition(col, row, this);
+    public GridPosition makeGridPosition(int col, int row, String picture) {
+
+        return new SimpleGfxPosition(col, row, this, picture);
     }
 
     public int rowToY(int row) {

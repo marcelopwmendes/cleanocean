@@ -4,12 +4,12 @@ import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Movable;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
 import org.academiadecodigo.murlogs.cleanocean.menus.StarterMenu;
-//import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
+import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
+
 
 
 public class Game {
@@ -27,8 +27,8 @@ public class Game {
     private int rows;
 
 
-    private int trashQuantity = 1;
-    private int obstacleQuantity = 0;
+    private int trashQuantity = 20;
+    private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
 
@@ -51,12 +51,10 @@ public class Game {
         obstacles = new Obstacle[obstacleQuantity];
         ecos = new Eco[ecoQuantity];
 
-        int col = Main.COLS - 1;
-        int row = 0;
+
         for (int i = 0; i < ecos.length; i++) {
-            ecos[i] = new Eco(grid.makeGridPosition(col, row), TrashType.values()[i]);
+            ecos[i] = EcoFactory.makeEco(grid);
             ecos[i].setGrid(grid);
-            col -= 1;
         }
 
         for (int i = 0; i < obstacles.length; i++) {
@@ -70,7 +68,10 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        this.player = new Player(grid, grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 1), ecos);
+
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, "pig40.png");
+        player = new Player(grid,gridPosition, ecos);
+
 
         collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
 
