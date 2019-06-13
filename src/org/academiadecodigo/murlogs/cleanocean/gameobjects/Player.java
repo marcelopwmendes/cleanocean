@@ -28,6 +28,8 @@ public class Player implements KeyboardHandler {
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
+    private boolean slow = false;
+    private int s = 2;
     //private String pic = "girl_front_stopped.png";
 
     private CollisionDetector collisionDetector;
@@ -96,7 +98,32 @@ public class Player implements KeyboardHandler {
             pickTrash(trash);
         }
 
-        position.moveInDirection(direction, 1);
+        if (s % 2 != 0) {
+            int random = (int) Math.floor(Math.random() * 10);
+            if (random > 3) {
+
+            }
+            if (random <= 3) {
+                position.moveInDirection(direction, 1);
+            }
+
+        }
+        if (s % 2 == 0) {
+            position.moveInDirection(direction, 1);
+        }
+        /*if (slow) {
+            position.moveInDirection(GridDirection.values()[(int) Math.floor(Math.random() * GridDirection.values().length)], 1);
+            s++;
+            if (s == 10) {
+                slow = false;
+                s = 0;
+            }
+            System.out.println(s);
+        }
+        if (!slow) {
+            position.moveInDirection(direction, 1);
+        }
+*/
 
 
         // empty bagTrash
@@ -244,5 +271,7 @@ public class Player implements KeyboardHandler {
         this.grid = grid;
     }
 
-
+    public void setSlow() {
+        s = 3;
+    }
 }
