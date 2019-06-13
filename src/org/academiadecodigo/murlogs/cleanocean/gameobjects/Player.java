@@ -2,6 +2,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
+import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.Game;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
@@ -18,32 +19,40 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 public class Player implements KeyboardHandler {
 
     private static final int CAPACITY = 25;
-    private int[] trash;
-    private int trashWeight;
-    private int score;
-    private boolean inBeach;
-    private Keyboard keyboard;
+    private int[] trash = new int[5];
+    private int trashWeight = 0;
+    private int score = 0;
+    private boolean inBeach = true;
+    private Keyboard keyboard;//= new Keyboard(this);
     private Eco[] ecos;
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
 
+    private boolean slow = false;
+    private int s = 2;
+
+
     private CollisionDetector collisionDetector;
 
 
-    public Player(GridPosition pos, Eco[] ecos) {
+    public Player(Grid grid, GridPosition pos, Eco[] ecos) {
         trash = new int[5];
         trashWeight = 0;
         score = 0;
         inBeach = true;
         position = pos;
         this.ecos = ecos;
-        pos.setColor(GridColor.GREEN);
+        position.setColor(GridColor.GREEN);
+        this.grid = grid;
         keyboard = new Keyboard(this);
         init();
     }
 
+
     public void init() {
+
+        position.setColor(GridColor.GREEN);
         KeyboardEvent up = new KeyboardEvent();
         up.setKey(KeyboardEvent.KEY_W);
         up.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -94,7 +103,30 @@ public class Player implements KeyboardHandler {
             pickTrash(trash);
         }
 
-        position.moveInDirection(direction, 1);
+        if (s % 2 != 0) {
+            int random = (int) Math.floor(Math.random() * 10);
+
+            if (random <= 5) {
+                position.moveInDirection(direction, 1);
+            }
+
+        }
+        if (s % 2 == 0) {
+            position.moveInDirection(direction, 1);
+        }
+        /*if (slow) {
+            position.moveInDirection(GridDirection.values()[(int) Math.floor(Math.random() * GridDirection.values().length)], 1);
+            s++;
+            if (s == 10) {
+                slow = false;
+                s = 0;
+            }
+            System.out.println(s);
+        }
+        if (!slow) {
+            position.moveInDirection(direction, 1);
+        }
+*/
 
 
         // empty bagTrash
@@ -242,5 +274,11 @@ public class Player implements KeyboardHandler {
         this.grid = grid;
     }
 
+    public void translate() {
+        grid.makeGridPosition(Main.COLS - 1, 0, "pig40.png");
+    }
 
+    public void setSlow() {
+        s = 3;
+    }
 }

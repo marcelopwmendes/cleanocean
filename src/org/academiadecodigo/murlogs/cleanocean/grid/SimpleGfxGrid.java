@@ -9,21 +9,18 @@ public class SimpleGfxGrid implements Grid {
     private static final int CELLSIZE = 40;
     private int cols;
     private int rows;
-    //private Rectangle rectangle;
     private Picture backgroundSand;
 
 
-    public SimpleGfxGrid(int cols, int rows) {
+    public SimpleGfxGrid(int cols, int rows, String s) {
         this.cols = cols;
         this.rows = rows;
-        //this.rectangle = new Rectangle(PADDING, PADDING, CELLSIZE * cols, CELLSIZE * rows);
-        this.backgroundSand = new Picture(PADDING, PADDING, "Sand1280x720.png");
+        this.backgroundSand = new Picture(PADDING, PADDING, s);
 
     }
 
     @Override
     public void init() {
-        //rectangle.draw();
         backgroundSand.draw();
     }
 
@@ -79,5 +76,9 @@ public class SimpleGfxGrid implements Grid {
 
     public int columnToX(int column) {
         return PADDING + column * CELLSIZE;
+    }
+
+    public static int getPADDING() {
+        return PADDING;
     }
 }

@@ -7,7 +7,7 @@ public class Main {
 
     public static final int COLS = 32;
     public static final int ROWS = 18;
-    public static final int DELAY = 200;
+    public static final int DELAY = 400;
 
 
     public static void main(String[] args) throws InterruptedException {
