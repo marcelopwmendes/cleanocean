@@ -17,7 +17,7 @@ public class SimpleGfxGrid implements Grid {
         this.cols = cols;
         this.rows = rows;
         //this.rectangle = new Rectangle(PADDING, PADDING, CELLSIZE * cols, CELLSIZE * rows);
-        this.backgroundSand = new Picture(PADDING, PADDING, "Sand.png");
+        this.backgroundSand = new Picture(PADDING, PADDING, "Sand1280x720.png");
 
     }
 

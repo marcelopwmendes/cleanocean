@@ -103,7 +103,10 @@ public class Game {
             trashes[i].setGrid(grid);
         }
 
-        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, "pig40.png");
+        String[] cleaners = {"pig40.png", "PIGG40.png", "pigga40.png", "cat40.png", "dog40.png"};
+        int pigs = (int) (Math.random() * cleaners.length);
+
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, cleaners[pigs]);
         player = new Player(gridPosition, ecos);
 
 

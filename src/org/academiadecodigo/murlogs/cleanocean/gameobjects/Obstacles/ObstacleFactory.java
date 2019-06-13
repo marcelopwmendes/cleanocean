@@ -31,13 +31,17 @@ public class ObstacleFactory {
 
 
         Obstacle obstacle;
-        String[] others = {"obstacleHouse40.png", "obstacleTowel40.png", "obstacleSecTowel40.png", "obstacleTreeTile64.png"};
+
+        String[] others = {"obstacleHouse64.png", "obstacleTowel40.png", "obstacleSecTowel40.png", "obstacleTreeTile64.png"};
         int pic = (int) (Math.random() * others.length);
+
+        String[] shells = {"obstacleShell1.png", "obstacleShell2.png"};
+        int picShells = (int) (Math.random() * shells.length);
 
         switch (landObstacle) {
 
             case SHELL:
-                obstacle = new Shell(grid.makeGridPosition(col, row, "Shell.png"));
+                obstacle = new Shell(grid.makeGridPosition(col, row, shells[picShells]));
                 break;
             case CRAB:
                 obstacle = new Crab(grid.makeGridPosition(col, row, "crab40.png"));
