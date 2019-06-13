@@ -89,10 +89,6 @@ public class Game {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
                         t.move();
-                        //}
-                        // if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
-                        //   t.move();
-
                     }
                 }
                 if (t.getPicked()) {

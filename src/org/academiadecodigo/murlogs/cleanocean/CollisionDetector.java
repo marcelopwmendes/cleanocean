@@ -68,6 +68,7 @@ public class CollisionDetector {
         return false;
     }
 
+
     public Trash detectTrash(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = getNextPosition(position, direction);
@@ -127,7 +128,6 @@ public class CollisionDetector {
     }
 
 
-
     private int[] moveUp(GridPosition position) {
         int[] nextPosition = new int[2];
         nextPosition[0] = position.getCol();
@@ -155,9 +155,6 @@ public class CollisionDetector {
         nextPosition[1] = position.getRow();
         return nextPosition;
     }
-
-
-
 
 
 

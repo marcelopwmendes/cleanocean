@@ -82,7 +82,7 @@ public class Player implements KeyboardHandler {
     public void move(GridDirection direction) {
 
 
-        this.currentDirection = direction;
+        currentDirection = direction;
 
 
         if (collisionDetector.detectObstacle(position, direction)) {
@@ -94,6 +94,7 @@ public class Player implements KeyboardHandler {
         if (trash != null && !trash.getPicked()) {
             pickTrash(trash);
         }
+
 
         position.moveInDirection(direction, 1);
 
