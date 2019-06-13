@@ -111,13 +111,27 @@ public class Game implements KeyboardHandler {
 
         for (int i = 0; i < obstacles.length; i++) {
             obstacles[i] = ObstacleFactory.makeBeachObstacle(grid);
-            obstacles[i].setGrid(grid);
+            for (Eco e : ecos) {
+                while (obstacles[i].getPosition().getCol() == e.getPos().getCol() && obstacles[i].getPosition().getRow() == e.getPos().getRow()) {
+                    {
+                        obstacles[i].randomPos();
+                    }
+                }
+                obstacles[i].setGrid(grid);
+            }
         }
 
         for (int i = 0; i < trashes.length; i++) {
-
             trashes[i] = TrashFactory.makeTrash(grid, obstacles, collisionDetector);
-            trashes[i].setGrid(grid);
+            for (Obstacle o : obstacles) {
+                for (Eco e : ecos) {
+                    while ((trashes[i].getPosition().getCol() == o.getPosition().getCol() && trashes[i].getPosition().getRow() == o.getPosition().getRow())
+                            || (trashes[i].getPosition().getCol() == e.getPos().getCol() && trashes[i].getPosition().getRow() == e.getPos().getRow())) {
+                        trashes[i].randomPos();
+                    }
+                    trashes[i].setGrid(grid);
+                }
+            }
         }
 
 
@@ -153,7 +167,12 @@ public class Game implements KeyboardHandler {
             for (Trash t : trashes) {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
-                        t.move();
+                        for (Obstacle o : obstacles) {
+                            if (t.getPosition().getRow() != o.getPosition().getRow() || t.getPosition().getCol() != o.getPosition().getCol()) {
+                                t.move();
+                            }
+                        }
+
                         //}
                         // if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
                         //   t.move();
