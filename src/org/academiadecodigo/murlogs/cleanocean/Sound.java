@@ -1,4 +1,4 @@
-package org.academiadecodigo.murlogs.cleanocean.menus;
+package org.academiadecodigo.murlogs.cleanocean;
 
 import javax.sound.sampled.*;
 import java.io.File;

@@ -38,6 +38,7 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
+
     public static Text score;
     public static Text organic;
     public static Text glass;
@@ -135,16 +136,16 @@ public class Game implements KeyboardHandler {
         }
 
 
-        String[] cleaners = {"pig40.png", "PIGG40.png", "pigga40.png", "cat40.png", "dog40.png", "playerGari40.png", "playerGariCleaning40.png"};
-        int pigs = (int) (Math.random() * cleaners.length);
+        String[] playersPictures = {"pig40.png", "PIGG40.png", "pigga40.png", "cat40.png", "dog40.png", "playerGari40.png", "playerGariCleaning40.png"};
+        int playerPicture = (int) (Math.random() * playersPictures.length);
 
-        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, cleaners[pigs]);
-        player = new Player(grid, gridPosition, ecos);
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, playersPictures[playerPicture]);
+        this.player = new Player(grid, gridPosition, ecos);
 
 
-        collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
+        collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, this.player);
 
-        player.setCollisionDetector(collisionDetector);
+        this.player.setCollisionDetector(collisionDetector);
 
         play = true;
 
@@ -184,7 +185,7 @@ public class Game implements KeyboardHandler {
                     }
                 }
                 if (verifyPickedTrashes() == true && player.getTrashWeight() == 0) {
-                    Text victory = new Text(600, 350, "YOU WON ! \n Score:" + player.getScore());
+                    Text victory = new Text(600, 350, "Congratulations! You have a better world! \n Score:" + player.getScore());
                     victory.draw();
                     try {
                         Thread.sleep(5000);
