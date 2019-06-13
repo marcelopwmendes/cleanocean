@@ -64,7 +64,7 @@ public class GameOcean {
             trashes[i].setGrid(grid);
         }
 
-        player = new Player(grid, grid.makeGridPosition(Main.COLS - 1, 2, "pig40.png"), ecos);
+        player = new Player(grid, grid.makeGridPosition(Main.COLS - 1, 2, :::::::), ecos);
         player.setScore(score);
         player.setInBeach(false);
         System.out.println(score);

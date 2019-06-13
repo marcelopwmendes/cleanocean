@@ -61,7 +61,7 @@ public class SimpleGfxGrid implements Grid {
     @Override
     public GridPosition makeGridPosition() {
         // obstacle draw
-        return new SimpleGfxPosition(this, "obstacleTreeTile40.png");
+        return new SimpleGfxPosition(this, "Obstacles/Tree_40.png");
     }
 
     @Override
