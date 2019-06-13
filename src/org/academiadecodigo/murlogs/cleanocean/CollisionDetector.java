@@ -1,7 +1,8 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Shell;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Obstacle;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Player;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
@@ -44,8 +45,6 @@ public class CollisionDetector {
 */
 
 
-
-
     public boolean detectObstacle(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = getNextPosition(position, direction);
@@ -54,14 +53,23 @@ public class CollisionDetector {
         int nextRow = nextPosition[1];
 
         for (Obstacle o : obstacles) {
-            if ( (o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow) ) {
+
+
+
+            if ((o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow) && (!(o instanceof Shell))) {
                 return true;
+            }
+            if (o instanceof Shell && (o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow)){
+                Shell shell = (Shell) o;
+                shell.setVisible(true);
+                player.setSlow();
+                player.setScore(-10);
             }
         }
 
         // Detect Eco
 
-        if ( (nextCol > Main.COLS - 6) && (nextRow == 0) ) {
+        if ((nextCol > Main.COLS - 6) && (nextRow == 0)) {
             return true;
         }
 
@@ -77,7 +85,7 @@ public class CollisionDetector {
         int nextRow = nextPosition[1];
 
         for (Trash t : trashes) {
-            if ( (t.getPosition().getCol() == nextCol) && (t.getPosition().getRow() == nextRow) ) {
+            if ((t.getPosition().getCol() == nextCol) && (t.getPosition().getRow() == nextRow)) {
                 return t;
             }
         }
@@ -155,8 +163,6 @@ public class CollisionDetector {
         nextPosition[1] = position.getRow();
         return nextPosition;
     }
-
-
 
 
 }

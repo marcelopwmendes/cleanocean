@@ -12,7 +12,7 @@ public class Reminder {
     Toolkit toolkit;
     int minutes = 10;
     int seconds = 00;
-    Text text = new Text(10, 10, minutes + ":" + seconds);
+    Text text = new Text(33, 10, "TIME: " + minutes + ":" + seconds);
 
     public Reminder(int seconds) {
         toolkit = Toolkit.getDefaultToolkit();
@@ -36,17 +36,17 @@ public class Reminder {
                     seconds--;
                     text.draw();
                     if (seconds >= 10) {
-                        text.setText(minutes + ":" + seconds);
+                        text.setText("TIME: " + minutes + ":" + seconds);
                         return;
                     }
-                    text.setText(minutes + ":0" + seconds);
+                    text.setText("TIME: " + minutes + ":0" + seconds);
                     return;
                 }
 
                 if (minutes != 0) {
                     seconds = 59;
                     minutes--;
-                    text.setText(minutes + ":" + seconds);
+                    text.setText("TIME: " + minutes + ":" + seconds);
                     return;
                 }
 
