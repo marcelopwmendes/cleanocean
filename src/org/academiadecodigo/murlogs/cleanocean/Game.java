@@ -1,13 +1,18 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Movable;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Obstacle;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.ObstacleFactory;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Movable;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
 import org.academiadecodigo.murlogs.cleanocean.menus.StarterMenu;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -16,6 +21,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 
 public class Game implements KeyboardHandler {
+
 
     private Grid grid;
     private int delay;
@@ -32,6 +38,14 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
+    public static Text score;
+    public static Text organic;
+    public static Text glass;
+    public static Text metal;
+    public static Text plastic;
+    public static Text paper;
+    public static Text weight;
+
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
@@ -46,6 +60,30 @@ public class Game implements KeyboardHandler {
         this.delay = delay;
     }
 
+    public void inventory() {
+        score = new Text(34, 30, "SCORE: " + 0);
+        score.setColor(Color.RED);
+        score.draw();
+        organic = new Text(34, 42, "ORGANIC: " + 0);
+        organic.setColor(Color.GRAY);
+        organic.draw();
+        glass = new Text(34, 54, "GLASS: " + 0);
+        glass.setColor(Color.GREEN);
+        glass.draw();
+        metal = new Text(34, 66, "METAL: " + 0);
+        metal.setColor(Color.YELLOW);
+        metal.draw();
+        plastic = new Text(34, 78, "PLASTIC: " + 0);
+        plastic.setColor(Color.ORANGE);
+        plastic.draw();
+        paper = new Text(34, 90, "PAPER: " + 0);
+        paper.setColor(Color.CYAN);
+        paper.draw();
+        weight = new Text(25, 110, "WEIGHT: " + 0 + " /25");
+        weight.setColor(Color.WHITE);
+        weight.draw();
+    }
+
 
     public void init() {
 
@@ -56,6 +94,15 @@ public class Game implements KeyboardHandler {
         obstacles = new Obstacle[obstacleQuantity];
         ecos = new Eco[ecoQuantity];
 
+        Rectangle rectangle = new Rectangle(10, 10, 120, 150);
+        rectangle.setColor(Color.BLACK);
+        rectangle.draw();
+        rectangle.fill();
+        inventory();
+
+
+        int col = Main.COLS - 1;
+        int row = 0;
 
         for (int i = 0; i < ecos.length; i++) {
             ecos[i] = EcoFactory.makeEco(grid);
@@ -63,7 +110,7 @@ public class Game implements KeyboardHandler {
         }
 
         for (int i = 0; i < obstacles.length; i++) {
-            obstacles[i] = ObstacleFactory.makeObstacle(grid);
+            obstacles[i] = ObstacleFactory.makeBeachObstacle(grid);
             obstacles[i].setGrid(grid);
         }
 
@@ -126,6 +173,7 @@ public class Game implements KeyboardHandler {
                         }
                     }
                 }
+                countTrash = 0;
             }
             Thread.sleep(delay);
         }
@@ -155,6 +203,8 @@ public class Game implements KeyboardHandler {
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
     }
+
+
 }
 
 
