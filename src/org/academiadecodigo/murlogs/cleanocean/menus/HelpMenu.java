@@ -124,10 +124,10 @@ public class HelpMenu implements KeyboardHandler {
         qToLeave = new Picture(980, 690, "resources/Menu/Q_key_to_leave.png");
         qToLeave.draw();
 
-        krabbyN = new Picture(588, 610, "crab40N.png");
-        krabbyS = new Picture(588, 610, "crab40S.png");
-        krabbyW = new Picture(588, 610, "crab40W.png");
-        krabbyE = new Picture(588, 610, "crab40E.png");
+        krabbyN = new Picture(588, 610, "resources/Menu/crab40N.png");
+        krabbyS = new Picture(588, 610, "resources/Menu/crab40S.png");
+        krabbyW = new Picture(588, 610, "resources/Menu/crab40W.png");
+        krabbyE = new Picture(588, 610, "resources/Menu/crab40E.png");
 
 
         wExplained = new Picture(525, 585, "resources/Menu/W_key_to_up.png");

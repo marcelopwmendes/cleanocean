@@ -65,7 +65,7 @@ public class StarterMenu implements KeyboardHandler {
 
         reverseMenuSelector = new Picture(677, 520, "resources/Menu/Menu_selector_reversed.png");
 
-        qToLeave = new Picture(1080, 690, "pressQToLeaveSmall.png");
+        qToLeave = new Picture(1080, 690, "resources/Menu/Q_key_to_leave_small.png");
         qToLeave.draw();
 
         keyboardInit();
