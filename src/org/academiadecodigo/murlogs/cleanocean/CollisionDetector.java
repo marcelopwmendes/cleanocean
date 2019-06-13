@@ -81,6 +81,7 @@ public class CollisionDetector {
         return false;
     }
 
+
     public Trash detectTrash(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = getNextPosition(position, direction);

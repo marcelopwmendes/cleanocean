@@ -46,7 +46,7 @@ public class Game implements KeyboardHandler {
     public static Text paper;
     public static Text weight;
 
-    private int trashQuantity = 1;
+    private int trashQuantity = 20;
     private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
@@ -167,10 +167,20 @@ public class Game implements KeyboardHandler {
 
         boolean flag = true;
         while (flag) {
+
+            for (Obstacle o : obstacles) {
+                if (o instanceof Movable) {
+                    o.move();
+                    if (collisionDetector.detectPlayer(o.getPosition(), o.getDirection())) {
+                        player.setRandomWalk();
+                    }
+                }
+            }
+
             for (Trash t : trashes) {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
-                            t.move();
+                        t.move();
                     }
                 }
                 if (verifyPickedTrashes() == true && player.getTrashWeight() == 0) {

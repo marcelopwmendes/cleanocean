@@ -23,12 +23,6 @@ public class Paper extends Trash implements Movable {
         }
     }
 
-    @Override
-    public GridDirection chooseDirection() {
-
-        return GridDirection.values()[(int) (Math.random() * GridDirection.values().length)];
-
-    }
 
 
 }

@@ -31,7 +31,9 @@ public class Player implements KeyboardHandler {
 
     private boolean slow = false;
     private int s = 2;
-
+    //private String pic = "girl_front_stopped.png";
+    private boolean randomWalk;
+    private int randomWalkCounter = 20;
 
     private CollisionDetector collisionDetector;
 
@@ -90,7 +92,7 @@ public class Player implements KeyboardHandler {
     public void move(GridDirection direction) {
 
 
-        this.currentDirection = direction;
+        currentDirection = direction;
 
 
         if (collisionDetector.detectObstacle(position, direction)) {
@@ -103,17 +105,28 @@ public class Player implements KeyboardHandler {
             pickTrash(trash);
         }
 
-        if (s % 2 != 0) {
-            int random = (int) Math.floor(Math.random() * 10);
+        if (randomWalk) {
+            direction = GridDirection.values()[(int) (Math.random() * GridDirection.values().length)];
+            position.moveInDirection(direction, 1);
+            randomWalkCounter--;
+            if (randomWalkCounter == 0) {
+                randomWalkCounter = 20;
+                randomWalk = false;
+            }
+        } else {
+            if (s % 2 != 0) {
+                int random = (int) Math.floor(Math.random() * 10);
+                if (random <= 5) {
+                    position.moveInDirection(direction, 1);
+                }
 
-            if (random <= 5) {
+            }
+            if (s % 2 == 0) {
                 position.moveInDirection(direction, 1);
             }
+        }
 
-        }
-        if (s % 2 == 0) {
-            position.moveInDirection(direction, 1);
-        }
+
         /*if (slow) {
             position.moveInDirection(GridDirection.values()[(int) Math.floor(Math.random() * GridDirection.values().length)], 1);
             s++;
@@ -293,5 +306,9 @@ public class Player implements KeyboardHandler {
 
     public void setSlow() {
         s = 3;
+    }
+
+    public void setRandomWalk() {
+        randomWalk = true;
     }
 }
