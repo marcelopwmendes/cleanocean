@@ -6,9 +6,9 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
-public class PeopleStuff extends Obstacle {
+public class Others extends Obstacle {
 
-    public PeopleStuff(GridPosition position) {
+    public Others(GridPosition position) {
         super(position);
     }
 }

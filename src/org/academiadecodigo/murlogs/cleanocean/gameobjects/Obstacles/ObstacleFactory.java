@@ -17,7 +17,6 @@ public class ObstacleFactory {
         int col;
         int row;
 
-
         row = (int) (Math.random() * Main.ROWS);
         col = (int) (Math.random() * Main.COLS);
 
@@ -32,24 +31,23 @@ public class ObstacleFactory {
 
 
         Obstacle obstacle;
+        String[] others = {"obstacleHouse40.png", "obstacleTowel40.png", "obstacleSecTowel40.png", "obstacleTreeTile64.png"};
+        int pic = (int) (Math.random() * others.length);
 
         switch (landObstacle) {
+
             case SHELL:
                 obstacle = new Shell(grid.makeGridPosition(col, row, "Shell.png"));
-                break;
-            case PEOPLESTUFF:
-                obstacle = new PeopleStuff(grid.makeGridPosition(col, row, "obstacleTowel40.png"));
-                break;
-            case ROCK:
-                obstacle = new Rock(grid.makeGridPosition(col, row, "obstacleHouse40.png"));
                 break;
             case CRAB:
                 obstacle = new Crab(grid.makeGridPosition(col, row, "crab40.png"));
                 break;
+            case OTHERS:
+                obstacle = new Others(grid.makeGridPosition(col, row,  others[pic]));
+                break;
             default:
                 obstacle = new Rock(grid.makeGridPosition());
         }
-
         return obstacle;
     }
 
@@ -58,7 +56,7 @@ public class ObstacleFactory {
         int col;
         int row;
 
-// NEEDS CHANGE  - dimensões do mapa para ver onde é o mar e onde é a terra --------------------------------------------------------------
+// NEEDS CHANGE  - dimensões do mapa para ver onde é o mar e onde é a terra --------------------------------------------
 
         row = (int) (Math.random() * Main.ROWS);
         col = (int) (Math.random() * Main.COLS);
@@ -81,7 +79,7 @@ public class ObstacleFactory {
             case BUOY:
                 obstacle = new Buoy(grid.makeGridPosition());
                 break;
-       //     case WHALE:
+       //   case WHALE:
         //        obstacle = new Whale(grid.makeGridPosition());
          //       break;
             default:

@@ -3,7 +3,7 @@ package org.academiadecodigo.murlogs.cleanocean;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Obstacle;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.ObstacleFactory;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Movable;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Movable;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
