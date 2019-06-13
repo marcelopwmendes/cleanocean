@@ -2,6 +2,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
+import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.Game;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
@@ -13,42 +14,47 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-//TESTE PARA VER SE O GIT DEIXA O DANILO BRINCAR
+
 public class Player implements KeyboardHandler {
 
     private static final int CAPACITY = 25;
-    private int[] trash;
-    private int trashWeight;
-    private int score;
-    private boolean inBeach;
-    private Keyboard keyboard;
+    private int[] trash = new int[5];
+    private int trashWeight = 0;
+    private int score = 0;
+    private boolean inBeach = true;
+    private Keyboard keyboard;//= new Keyboard(this);
     private Eco[] ecos;
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
+
     private boolean slow = false;
     private int s = 2;
     //private String pic = "girl_front_stopped.png";
     private boolean randomWalk;
     private int randomWalkCounter = 20;
+
     private CollisionDetector collisionDetector;
 
 
-    public Player(GridPosition pos, Eco[] ecos) {
+    public Player(Grid grid, GridPosition pos, Eco[] ecos) {
         trash = new int[5];
         trashWeight = 0;
         score = 0;
         inBeach = true;
         position = pos;
         this.ecos = ecos;
-        pos.setColor(GridColor.GREEN);
+        position.setColor(GridColor.GREEN);
+        this.grid = grid;
         keyboard = new Keyboard(this);
         init();
     }
 
+
     public void init() {
+
+        position.setColor(GridColor.GREEN);
         KeyboardEvent up = new KeyboardEvent();
         up.setKey(KeyboardEvent.KEY_W);
         up.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -137,15 +143,17 @@ public class Player implements KeyboardHandler {
 
 
         // empty bagTrash
-        if (getPosition().getRow() == 1 && getPosition().getCol() > 27) {
-            int points = 0;
-            for (int i = 0; i < ecos.length; i++) {
-                points += ecos[i].recycleTrash(getTrash()[i]);
+        if (isInBeach()) {
+            if (getPosition().getRow() == 1 && getPosition().getCol() > 27) {
+                int points = 0;
+                for (int i = 0; i < ecos.length; i++) {
+                    points += ecos[i].recycleTrash(getTrash()[i]);
+                }
+                clearTrash();
+                setScore(points);
+                Game.score.setText("SCORE: " + score);
+                //System.out.println(getScore());
             }
-            clearTrash();
-            setScore(points);
-            Game.score.setText("SCORE: " + score);
-            //System.out.println(getScore());
         }
     }
 
@@ -269,9 +277,9 @@ public class Player implements KeyboardHandler {
         return inBeach;
     }
 
-    public void setInBeach(boolean inBeach) {
+    /*public void setInBeach(boolean inBeach) {
         this.inBeach = inBeach;
-    }
+    }*/
 
     public GridPosition getPosition() {
         return position;
@@ -279,6 +287,21 @@ public class Player implements KeyboardHandler {
 
     public void setGrid(Grid grid) {
         this.grid = grid;
+    }
+
+    /*public void translate() {
+        if (!isInBeach()) {
+            position.setPos(Main.COLS-1, 0);
+            //grid.makeGridPosition(Main.COLS - 1, 0, "pig40.png");
+            return;
+        }
+        position.setPos(Main.COLS-1, Main.ROWS-1);
+        //grid.makeGridPosition(Main.COLS-1, Main.ROWS-1, "pig40.png");
+    }
+    */
+
+    public int getTrashWeight() {
+        return trashWeight;
     }
 
     public void setSlow() {

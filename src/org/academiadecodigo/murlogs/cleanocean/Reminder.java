@@ -54,7 +54,11 @@ public class Reminder {
             text.translate(40, 22);
             text.setText("Game Over");
             text.draw();
-
+            try {
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
             System.exit(0);
         }
 

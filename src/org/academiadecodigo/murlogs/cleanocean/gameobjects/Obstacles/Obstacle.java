@@ -1,5 +1,6 @@
 package org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles;
 
+import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
@@ -55,8 +56,13 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
         return position;
     }
 
+
     public  GridDirection getDirection() {
         return currentDirection;
     }
 
+
+    public void randomPos(){
+        position.setPos((int) (Math.random() * Main.COLS), (int) (Math.random() * Main.ROWS));
+    }
 }

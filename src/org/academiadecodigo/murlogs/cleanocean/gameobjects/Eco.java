@@ -43,6 +43,9 @@ public class Eco {
         return trashType.getScore() * trashQuantity;
     }
 
+    public GridPosition getPos() {
+        return pos;
+    }
 
     public void setGrid(Grid grid) {
         this.grid = grid;
