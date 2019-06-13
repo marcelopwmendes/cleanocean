@@ -9,10 +9,13 @@ import org.academiadecodigo.murlogs.cleanocean.grid.GridFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridType;
 import org.academiadecodigo.murlogs.cleanocean.menus.StarterMenu;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
+import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 
-
-public class Game {
+public class Game implements KeyboardHandler {
 
     private Grid grid;
     private int delay;
@@ -26,6 +29,8 @@ public class Game {
     private int cols;
     private int rows;
 
+    Keyboard keyboard = new Keyboard(this);
+    KeyboardEvent pressQ;
 
     private int trashQuantity = 20;
     private int obstacleQuantity = 10;
@@ -45,7 +50,7 @@ public class Game {
     public void init() {
 
         grid.init();
-
+        keyboardinit();
 
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
@@ -70,7 +75,7 @@ public class Game {
 
 
         GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, "pig40.png");
-        player = new Player(grid,gridPosition, ecos);
+        player = new Player(grid, gridPosition, ecos);
 
 
         collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
@@ -128,6 +133,28 @@ public class Game {
     }
 
 
+    public void keyboardinit() {
+
+        pressQ = new KeyboardEvent();
+        pressQ.setKey(KeyboardEvent.KEY_Q);
+        pressQ.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
+        keyboard.addEventListener(pressQ);
+    }
+
+    @Override
+    public void keyPressed(KeyboardEvent keyboardEvent) {
+        switch (keyboardEvent.getKey()) {
+            case KeyboardEvent.KEY_Q:
+                System.exit(0);
+                break;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyboardEvent keyboardEvent) {
+
+    }
 }
 
 

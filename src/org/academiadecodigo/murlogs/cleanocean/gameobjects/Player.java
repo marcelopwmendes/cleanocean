@@ -140,21 +140,17 @@ public class Player implements KeyboardHandler {
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_W:
                 //up
-                System.out.println("UP");
                 currentDirection = GridDirection.UP;
                 break;
             case KeyboardEvent.KEY_A:
                 //left
-                System.out.println("UP");
                 currentDirection = GridDirection.LEFT;
                 break;
             case KeyboardEvent.KEY_S:
-                System.out.println("UP");
                 //down
                 currentDirection = GridDirection.DOWN;
                 break;
             case KeyboardEvent.KEY_D:
-                System.out.println("UP");
                 //right
                 currentDirection = GridDirection.RIGHT;
                 break;

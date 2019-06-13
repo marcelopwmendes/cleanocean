@@ -42,7 +42,6 @@ public class HelpMenu implements KeyboardHandler {
     private Picture press;
 
 
-
     private Grid grid;
     private Game game;
     private StarterMenu starterMenu;
@@ -103,7 +102,7 @@ public class HelpMenu implements KeyboardHandler {
 
         reverseMenuSelector = new Picture(677, 520, "menu selector reversed.png");
 
-        press = new Picture( 25,575,"Press.png");
+        press = new Picture(25, 575, "Press.png");
         press.draw();
 
         wKey = new Picture(225, 575, "W.png");
@@ -155,6 +154,7 @@ public class HelpMenu implements KeyboardHandler {
         pressQ.setKey(KeyboardEvent.KEY_Q);
         pressQ.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
+
         releaseW = new KeyboardEvent();
         releaseW.setKey(KeyboardEvent.KEY_W);
         releaseW.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
@@ -187,7 +187,6 @@ public class HelpMenu implements KeyboardHandler {
         keyboard.addEventListener(releaseS);
         keyboard.addEventListener(releaseD);
 
-
     }
 
 
@@ -217,6 +216,7 @@ public class HelpMenu implements KeyboardHandler {
                 break;
             case KeyboardEvent.KEY_Q:
                 starterMenu.starterMenu();
+                starterMenu.setCurrent(starterMenu.getPlay());
                 keyboard.removeEventListener(pressA);
                 keyboard.removeEventListener(pressD);
                 keyboard.removeEventListener(pressS);
@@ -251,6 +251,7 @@ public class HelpMenu implements KeyboardHandler {
                 dKeyRed.delete();
                 dKey.draw();
                 break;
+
             case KeyboardEvent.KEY_Q:
                 keyboard.removeEventListener(releaseA);
                 keyboard.removeEventListener(releaseD);
