@@ -70,65 +70,65 @@ public class HelpMenu implements KeyboardHandler {
         // help menu
 
         SimpleGfxGrid gfxGrid = null;
-        background = new Picture(gfxGrid.getPADDING(), gfxGrid.getPADDING(), "Menu/Menu_background.png");
+        background = new Picture(gfxGrid.getPADDING(), gfxGrid.getPADDING(), "resources/Menu/Menu_background.png");
         background.draw();
 
-        helpDescription1 = new Picture(150, 50, "Menu/helpDescription1.png");
+        helpDescription1 = new Picture(150, 50, "resources/Menu/helpDescription1.png");
         helpDescription1.draw();
 
-        helpDescription2 = new Picture(175, 100, "Menu/helpDescription2.png");
+        helpDescription2 = new Picture(175, 100, "resources/Menu/helpDescription2.png");
         helpDescription2.draw();
 
-        helpDescription3 = new Picture(200, 150, "Menu/helpDescription3.png");
+        helpDescription3 = new Picture(200, 150, "resources/Menu/helpDescription3.png");
         helpDescription3.draw();
 
-        helpDescription4 = new Picture(150, 200, "Menu/helpDescription4.png");
+        helpDescription4 = new Picture(150, 200, "resources/Menu/helpDescription4.png");
         helpDescription4.draw();
 
-        helpDescription5 = new Picture(350, 250, "Menu/helpDescription5.png");
+        helpDescription5 = new Picture(350, 250, "resources/Menu/helpDescription5.png");
         helpDescription5.draw();
 
-        helpDescription6 = new Picture(550, 300, "Menu/helpDescription6.png");
+        helpDescription6 = new Picture(550, 300, "resources/Menu/helpDescription6.png");
         helpDescription6.draw();
 
-        helpDescription7 = new Picture(700, 350, "Menu/helpDescription7.png");
+        helpDescription7 = new Picture(700, 350, "resources/Menu/helpDescription7.png");
         helpDescription7.draw();
 
-        helpDescription8 = new Picture(250, 400, "Menu/helpDescription8.png");
+        helpDescription8 = new Picture(250, 400, "resources/Menu/helpDescription8.png");
         helpDescription8.draw();
 
-        helpDescription9 = new Picture(250, 450, "Menu/helpDescription9.png");
+        helpDescription9 = new Picture(250, 450, "resources/Menu/helpDescription9.png");
         helpDescription9.draw();
 
-        reverseMenuSelector = new Picture(677, 520, "Menu/Menu_selector_reversed.png");
+        reverseMenuSelector = new Picture(677, 520, "resources/Menu/Menu_selector_reversed.png");
 
-        press = new Picture(25, 575, "Menu/Press_Button.png");
+        press = new Picture(25, 575, "resources/Menu/Press_Button.png");
         press.draw();
 
-        wKey = new Picture(225, 575, "Menu/W_key_Blue.png");
+        wKey = new Picture(225, 575, "resources/Menu/W_key_Blue.png");
         wKey.draw();
-        wKeyRed = new Picture(225, 575, "Menu/W_key_Red.png");
+        wKeyRed = new Picture(225, 575, "resources/Menu/W_key_Red.png");
 
-        aKey = new Picture(175, 625, "Menu/A_key.png");
+        aKey = new Picture(175, 625, "resources/Menu/A_key.png");
         aKey.draw();
-        aKeyRed = new Picture(173, 623, "Menu/A_key_to_turn_Red.png");
+        aKeyRed = new Picture(173, 623, "resources/Menu/A_key_to_turn_Red.png");
 
-        sKey = new Picture(225, 625, "Menu/S_key.png");
+        sKey = new Picture(225, 625, "resources/Menu/S_key.png");
         sKey.draw();
-        sKeyRed = new Picture(223, 623, "Menu/S_key_Red.png");
+        sKeyRed = new Picture(223, 623, "resources/Menu/S_key_Red.png");
 
-        dKey = new Picture(275, 625, "Menu/D_key.png");
+        dKey = new Picture(275, 625, "resources/Menu/D_key.png");
         dKey.draw();
-        dKeyRed = new Picture(273, 623, "Menu/D_key_to_turn_Red.png");
+        dKeyRed = new Picture(273, 623, "resources/Menu/D_key_to_turn_Red.png");
 
-        qToLeave = new Picture(980, 690, "Menu/Q_key_to_leave.png");
+        qToLeave = new Picture(980, 690, "resources/Menu/Q_key_to_leave.png");
         qToLeave.draw();
 
 
-        wExplained = new Picture(525, 585, "Menu/W_key_to_up.png");
-        aExplained = new Picture(375, 625, "Menu/A_key_to_left.png");
-        dExplained = new Picture(650, 625, "Menu/D_key_to_right.png");
-        sExplained = new Picture(500, 650, "Menu/S_key_to_down.png");
+        wExplained = new Picture(525, 585, "resources/Menu/W_key_to_up.png");
+        aExplained = new Picture(375, 625, "resources/Menu/A_key_to_left.png");
+        dExplained = new Picture(650, 625, "resources/Menu/D_key_to_right.png");
+        sExplained = new Picture(500, 650, "resources/Menu/S_key_to_down.png");
     }
 
 

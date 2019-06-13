@@ -37,7 +37,7 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
-    Sound sound = new Sound("/Musics/BeachSong.wav");
+    Sound sound = new Sound("/resources/Musics/BeachSong.wav");
 
     public static Text score;
     public static Text organic;
@@ -55,7 +55,7 @@ public class Game implements KeyboardHandler {
     int countTrash = 0;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
-        grid = GridFactory.makeGrid(gridType, cols, rows, "Backgrounds/Sand1280x720s.png");
+        grid = GridFactory.makeGrid(gridType, cols, rows, "resources/Backgrounds/Sand1280x720s.png");
         this.cols = cols;
         this.rows = rows;
         this.delay = delay;
@@ -138,8 +138,8 @@ public class Game implements KeyboardHandler {
         }
 
 
-        String[] playersPictures = {"Players/Boy_40.png", "Players/Cat_40.png", "Players/Dog_40.png", "Players/Female_Pig_40.png",
-                "Players/Girl_40.png", "Players/Man_40.png", "Players/Pig_40.png", "Players/Pig_Hat_40.png"};
+        String[] playersPictures = {"resources/Players/Boy_40.png", "resources/Players/Cat_40.png", "resources/Players/Dog_40.png", "resources/Players/Female_Pig_40.png",
+                "resources/Players/Girl_40.png", "resources/Players/Man_40.png", "resources/Players/Pig_40.png", "resources/Players/Pig_Hat_40.png"};
 
         int playerPicture = (int) (Math.random() * playersPictures.length);
 

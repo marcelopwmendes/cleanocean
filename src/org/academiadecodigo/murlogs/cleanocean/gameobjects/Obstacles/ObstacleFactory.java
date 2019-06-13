@@ -32,10 +32,10 @@ public class ObstacleFactory {
 
         Obstacle obstacle;
 
-        String[] others = {"Obstacles/House_64.png", "Obstacles/Towel2_40.png", "Obstacles/Towel_40.png", "Obstacles/Tree_64.png"};
+        String[] others = {"resources/Obstacles/House_64.png", "resources/Obstacles/Towel2_40.png", "resources/Obstacles/Towel_40.png", "resources/Obstacles/Tree_64.png"};
         int pic = (int) (Math.random() * others.length);
 
-        String[] shells = {"Obstacles/Shell_40.png", "Obstacles/Shell2_40.png"};
+        String[] shells = {"resources/Obstacles/Shell_40.png", "resources/Obstacles/Shell2_40.png"};
         int picShells = (int) (Math.random() * shells.length);
 
         switch (landObstacle) {
@@ -44,7 +44,7 @@ public class ObstacleFactory {
                 obstacle = new Shell(grid.makeGridPosition(col, row, shells[picShells]));
                 break;
             case CRAB:
-                obstacle = new Crab(grid.makeGridPosition(col, row, "Obstacles/Crab_40.png"));
+                obstacle = new Crab(grid.makeGridPosition(col, row, "resources/Obstacles/Crab_40.png"));
                 break;
             case OTHERS:
                 obstacle = new Others(grid.makeGridPosition(col, row,  others[pic]));

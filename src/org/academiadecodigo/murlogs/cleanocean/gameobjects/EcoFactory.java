@@ -10,7 +10,7 @@ public class EcoFactory {
     private static int row = 0;
     private static int i = -1;
 
-    private static String[] eco = {"Ecos/ecoPaper_40.png", "Ecos/ecoMetal_40.png", "Ecos/ecoPlastic_40.png", "Ecos/ecoGlass_40.png", "Ecos/ecoOrganic_40.png"};
+    private static String[] eco = {"resources/Ecos/ecoPaper_40.png", "resources/Ecos/ecoMetal_40.png", "resources/Ecos/ecoPlastic_40.png", "resources/Ecos/ecoGlass_40.png", "resources/Ecos/ecoOrganic_40.png"};
 
 
     public static Eco makeEco(Grid grid) {

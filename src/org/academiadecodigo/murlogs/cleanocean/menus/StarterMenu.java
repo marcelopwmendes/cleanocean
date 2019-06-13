@@ -41,26 +41,26 @@ public class StarterMenu implements KeyboardHandler {
 
 
         //Initial menu
-        background = new Picture(SimpleGfxGrid.PADDING, SimpleGfxGrid.PADDING, "Menu/Menu_background.png");
+        background = new Picture(SimpleGfxGrid.PADDING, SimpleGfxGrid.PADDING, "resources/Menu/Menu_background.png");
         background.draw();
 
-        play = new Picture(250, 520, "Menu/Play_button_Blue.png");
+        play = new Picture(250, 520, "resources/Menu/Play_button_Blue.png");
         play.draw();
 
-        playRed = new Picture(248, 518, "Menu/Play_button_Red.png");
+        playRed = new Picture(248, 518, "resources/Menu/Play_button_Red.png");
 
-        help = new Picture(807, 520, "Menu/Help_button.png");
+        help = new Picture(807, 520, "resources/Menu/Help_button.png");
         help.draw();
 
-        helpRed = new Picture(805, 518, "Menu/Help_button_Red.png");
+        helpRed = new Picture(805, 518, "resources/Menu/Help_button_Red.png");
 
-        gameName = new Picture(317, 228, "Menu/game name.png");
+        gameName = new Picture(317, 228, "resources/Menu/game name.png");
         gameName.draw();
 
-        menuSelector = new Picture(480, 520, "Menu/Menu_selector.png");
+        menuSelector = new Picture(480, 520, "resources/Menu/Menu_selector.png");
         menuSelector.draw();
 
-        reverseMenuSelector = new Picture(677, 520, "Menu/Menu_selector_reversed.png");
+        reverseMenuSelector = new Picture(677, 520, "resources/Menu/Menu_selector_reversed.png");
 
         keyboardInit();
     }
