@@ -1,6 +1,8 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Obstacle;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.ObstacleFactory;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
@@ -48,7 +50,7 @@ public class GameOcean {
 
 
         for (int i = 0; i < obstacles.length; i++) {
-            obstacles[i] = ObstacleFactory.makeObstacle(grid);
+            obstacles[i] = ObstacleFactory.makeSeaObstacle(grid);
             obstacles[i].setGrid(grid);
         }
 
