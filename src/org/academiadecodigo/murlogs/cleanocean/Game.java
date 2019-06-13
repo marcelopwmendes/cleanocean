@@ -1,7 +1,9 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.*;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Movable;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Obstacle;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.ObstacleFactory;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Movable;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashFactory;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
@@ -92,7 +94,7 @@ public class Game {
         }
 
         for (int i = 0; i < obstacles.length; i++) {
-            obstacles[i] = ObstacleFactory.makeObstacle(grid);
+            obstacles[i] = ObstacleFactory.makeBeachObstacle(grid);
             obstacles[i].setGrid(grid);
         }
 

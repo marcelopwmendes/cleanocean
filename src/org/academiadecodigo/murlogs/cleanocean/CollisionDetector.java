@@ -1,8 +1,8 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Eco;
-import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacle;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Shell;
+import org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles.Obstacle;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.Player;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
