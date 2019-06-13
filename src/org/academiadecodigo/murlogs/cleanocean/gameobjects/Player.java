@@ -130,15 +130,17 @@ public class Player implements KeyboardHandler {
 
 
         // empty bagTrash
-        if (getPosition().getRow() == 1 && getPosition().getCol() > 27) {
-            int points = 0;
-            for (int i = 0; i < ecos.length; i++) {
-                points += ecos[i].recycleTrash(getTrash()[i]);
+        if (isInBeach()) {
+            if (getPosition().getRow() == 1 && getPosition().getCol() > 27) {
+                int points = 0;
+                for (int i = 0; i < ecos.length; i++) {
+                    points += ecos[i].recycleTrash(getTrash()[i]);
+                }
+                clearTrash();
+                setScore(points);
+                Game.score.setText("SCORE: " + score);
+                //System.out.println(getScore());
             }
-            clearTrash();
-            setScore(points);
-            Game.score.setText("SCORE: " + score);
-            //System.out.println(getScore());
         }
     }
 
@@ -262,9 +264,9 @@ public class Player implements KeyboardHandler {
         return inBeach;
     }
 
-    public void setInBeach(boolean inBeach) {
+    /*public void setInBeach(boolean inBeach) {
         this.inBeach = inBeach;
-    }
+    }*/
 
     public GridPosition getPosition() {
         return position;
@@ -274,8 +276,19 @@ public class Player implements KeyboardHandler {
         this.grid = grid;
     }
 
-    public void translate() {
-        grid.makeGridPosition(Main.COLS - 1, 0, "pig40.png");
+    /*public void translate() {
+        if (!isInBeach()) {
+            position.setPos(Main.COLS-1, 0);
+            //grid.makeGridPosition(Main.COLS - 1, 0, "pig40.png");
+            return;
+        }
+        position.setPos(Main.COLS-1, Main.ROWS-1);
+        //grid.makeGridPosition(Main.COLS-1, Main.ROWS-1, "pig40.png");
+    }
+    */
+
+    public int getTrashWeight() {
+        return trashWeight;
     }
 
     public void setSlow() {

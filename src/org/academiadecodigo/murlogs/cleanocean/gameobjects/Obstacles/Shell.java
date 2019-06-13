@@ -6,9 +6,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects.Obstacles;
 
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
-//TODO: Hide shell
-//TODO: Player can colide with shell
-//TODO: If player colide with shell, shell goes visible and player goes slower
+
 
 public class Shell extends Obstacle {
 

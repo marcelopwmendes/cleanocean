@@ -16,7 +16,7 @@ import org.academiadecodigo.murlogs.cleanocean.menus.StarterMenu;
 
 public class GameOcean {
 
-    private Grid grid;
+    /*private Grid grid;
     private int delay;
     private Player player;
     private Trash[] trashes;
@@ -25,15 +25,17 @@ public class GameOcean {
     private Reminder reminder;
     private Trash trash;
     private int score;
-    private int trashQuantity = 1;
+    private int trashQuantity = 10;
     private int obstacleQuantity = 0;
-    private int ecoQuantity = 5;
+    private Game game;
+    //private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
 
-    public GameOcean(GridType gridType, int cols, int rows, int delay, int score) {
+    public GameOcean(GridType gridType, int cols, int rows, int delay, int score, Game game) {
         grid = GridFactory.makeGrid(gridType, cols, rows, "Ocean.png");
         this.delay = delay;
         this.score = score;
+        this.game = game;
         //this.player = player;
         //this.player.setGrid(grid);
     }
@@ -46,7 +48,7 @@ public class GameOcean {
 
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
-        ecos = new Eco[ecoQuantity];
+        //ecos = new Eco[ecoQuantity];
 
 
         for (int i = 0; i < obstacles.length; i++) {
@@ -64,10 +66,10 @@ public class GameOcean {
 
         player = new Player(grid, grid.makeGridPosition(Main.COLS - 1, 2, "pig40.png"), ecos);
         player.setScore(score);
-        System.out.println(score
-        );
+        player.setInBeach(false);
+        System.out.println(score);
 
-        collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
+        collisionDetector = new CollisionDetector(obstacles, trashes, grid, player);
 
         player.setCollisionDetector(collisionDetector);
 
@@ -92,9 +94,18 @@ public class GameOcean {
                     //}
                 }
             }
+            if (player.getTrashWeight() > 0 && player.getPosition().getCol() == Main.COLS - 1 && player.getPosition().getRow() == 0) {
+                player.translate();
+                player.setInBeach(true);
+                game.goBack();
+                //grid.setBackgroundSand("Sand.png");
+
+
+            }
+
 
             Thread.sleep(delay);
         }
     }
-
+*/
 }

@@ -46,7 +46,7 @@ public class Game implements KeyboardHandler {
     public static Text paper;
     public static Text weight;
 
-    private int trashQuantity = 20;
+    private int trashQuantity = 1;
     private int obstacleQuantity = 10;
     private int ecoQuantity = 5;
     private CollisionDetector collisionDetector;
@@ -168,9 +168,9 @@ public class Game implements KeyboardHandler {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
                         for (Obstacle o : obstacles) {
-                            if (t.getPosition().getRow() != o.getPosition().getRow() || t.getPosition().getCol() != o.getPosition().getCol()) {
-                                t.move();
-                            }
+                            //if (t.getPosition().getRow() != o.getPosition().getRow() || t.getPosition().getCol() != o.getPosition().getCol()) {
+                            t.move();
+                            //}
                         }
 
                         //}
@@ -179,24 +179,40 @@ public class Game implements KeyboardHandler {
 
                     }
                 }
-                if (t.getPicked()) {
-                    countTrash++;
-                    if (countTrash >= trashes.length) {
-                        countTrash = trashes.length;
-                        if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
-                            player.setInBeach(false);
-                            GameOcean gameOcean = new GameOcean(GridType.SIMPLE_GFX, cols, rows, delay, player.getScore());
-                            gameOcean.start();
-                            flag = false;
-
-                        }
+                if (verifyPickedTrashes() == true && player.getTrashWeight() == 0) {
+                    Text victory = new Text(600, 350, "YOU WON ! \n Score:" + player.getScore());
+                    victory.draw();
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        System.err.println(e.getMessage());
                     }
+
+                    System.exit(0);
                 }
-                countTrash = 0;
+                /*if (verifyPickedTrashes()) {
+                    if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
+                        player.setInBeach(false);
+                        GameOcean gameOcean = new GameOcean(GridType.SIMPLE_GFX, cols, rows, delay, player.getScore(), this);
+                        gameOcean.start();
+                        flag = false;
+
+                    }
+                }*/
             }
             Thread.sleep(delay);
         }
 
+    }
+
+
+    public boolean verifyPickedTrashes() {
+        for (Trash t : trashes) {
+            if (t.getPicked() == false) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
@@ -223,6 +239,13 @@ public class Game implements KeyboardHandler {
 
     }
 
+    /*public void goBack() {
+        grid.setBackgroundSand("Sand.png");
+        for (int i = 0; i < ecos.length; i++) {
+            ecos[i] = EcoFactory.makeEco(grid);
+            ecos[i].setGrid(grid);
+        }
+    }*/
 
 }
 
