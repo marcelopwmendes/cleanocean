@@ -17,11 +17,11 @@ public class TrashFactory {
         int row;
         int type;
         int pic;
-        String[] paperT = {"Trashes/paperMagazine20.png", "Trashes/paperTrash40.png"};
-        String[] plasticT = {"Trashes/plasticSac40.png", "Trashes/plasticBottle40.png"};
-        String[] metalT = {"Trashes/metal40.png", "Trashes/metalCan40.png"};
-        String[] glassT = {"Trashes/glassBottle40.png", "Trashes/glassSecBottle40.png"};
-        String[] organicT = {"Trashes/organicBanana40.png", "Trashes/organicCorn40.png"};
+        String[] paperT = {"resources/Trashes/paperMagazine20.png", "resources/Trashes/paperTrash40.png"};
+        String[] plasticT = {"resources/Trashes/plasticSac40.png", "resources/Trashes/plasticBottle40.png"};
+        String[] metalT = {"resources/Trashes/metal40.png", "resources/Trashes/metalCan40.png"};
+        String[] glassT = {"resources/Trashes/glassBottle40.png", "resources/Trashes/glassSecBottle40.png"};
+        String[] organicT = {"resources/Trashes/organicBanana40.png", "resources/Trashes/organicCorn40.png"};
 
 
         type = (int) (Math.random() * TrashType.values().length);
