@@ -11,14 +11,16 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class StarterMenu implements KeyboardHandler {
 
-    Picture play;
-    Picture playRed;
-    Picture help;
-    Picture helpRed;
-    Picture gameName;
-    Picture menuSelector;
-    Picture reverseMenuSelector;
-    Picture background;
+    private Picture play;
+    private Picture playRed;
+    private Picture help;
+    private Picture helpRed;
+    private Picture gameName;
+    private Picture menuSelector;
+    private Picture reverseMenuSelector;
+    private Picture background;
+    private Picture qToLeave;
+
 
     SimpleGfxGrid gfxGrid;
 
@@ -30,6 +32,7 @@ public class StarterMenu implements KeyboardHandler {
     KeyboardEvent pressA;
     KeyboardEvent pressD;
     KeyboardEvent pressSpace;
+    KeyboardEvent pressQ;
 
     KeyboardEvent releaseSpace;
 
@@ -62,6 +65,9 @@ public class StarterMenu implements KeyboardHandler {
 
         reverseMenuSelector = new Picture(677, 520, "resources/Menu/Menu_selector_reversed.png");
 
+        qToLeave = new Picture(1080, 690, "pressQToLeaveSmall.png");
+        qToLeave.draw();
+
         keyboardInit();
     }
 
@@ -81,6 +87,10 @@ public class StarterMenu implements KeyboardHandler {
         pressSpace.setKey(KeyboardEvent.KEY_SPACE);
         pressSpace.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
+        pressQ = new KeyboardEvent();
+        pressQ.setKey(KeyboardEvent.KEY_Q);
+        pressQ.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
         releaseSpace = new KeyboardEvent();
         releaseSpace.setKey(KeyboardEvent.KEY_SPACE);
         releaseSpace.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
@@ -88,6 +98,7 @@ public class StarterMenu implements KeyboardHandler {
         keyboard.addEventListener(pressA);
         keyboard.addEventListener(pressD);
         keyboard.addEventListener(pressSpace);
+        keyboard.addEventListener(pressQ);
 
         keyboard.addEventListener(releaseSpace);
 
@@ -109,6 +120,9 @@ public class StarterMenu implements KeyboardHandler {
                 menuSelector.delete();
                 reverseMenuSelector.draw();
                 current = help;
+                break;
+            case KeyboardEvent.KEY_Q:
+                System.exit(0);
                 break;
             case KeyboardEvent.KEY_SPACE:
 

@@ -40,6 +40,10 @@ public class HelpMenu implements KeyboardHandler {
     private Picture wExplained;
     private Picture qToLeave;
     private Picture press;
+    private Picture krabbyN;
+    private Picture krabbyW;
+    private Picture krabbyS;
+    private Picture krabbyE;
 
 
     private Grid grid;
@@ -85,14 +89,10 @@ public class HelpMenu implements KeyboardHandler {
         helpDescription4 = new Picture(150, 200, "resources/Menu/helpDescription4.png");
         helpDescription4.draw();
 
-        helpDescription5 = new Picture(350, 250, "resources/Menu/helpDescription5.png");
-        helpDescription5.draw();
 
-        helpDescription6 = new Picture(550, 300, "resources/Menu/helpDescription6.png");
+
+        helpDescription6 = new Picture(50, 300, "resources/Menu/helpDescription6.png");
         helpDescription6.draw();
-
-        helpDescription7 = new Picture(700, 350, "resources/Menu/helpDescription7.png");
-        helpDescription7.draw();
 
         helpDescription8 = new Picture(250, 400, "resources/Menu/helpDescription8.png");
         helpDescription8.draw();
@@ -123,6 +123,11 @@ public class HelpMenu implements KeyboardHandler {
 
         qToLeave = new Picture(980, 690, "resources/Menu/Q_key_to_leave.png");
         qToLeave.draw();
+
+        krabbyN = new Picture(588, 610, "crab40N.png");
+        krabbyS = new Picture(588, 610, "crab40S.png");
+        krabbyW = new Picture(588, 610, "crab40W.png");
+        krabbyE = new Picture(588, 610, "crab40E.png");
 
 
         wExplained = new Picture(525, 585, "resources/Menu/W_key_to_up.png");
@@ -198,21 +203,37 @@ public class HelpMenu implements KeyboardHandler {
                 wExplained.draw();
                 wKey.delete();
                 wKeyRed.draw();
+                krabbyN.draw();
+                krabbyE.delete();
+                krabbyS.delete();
+                krabbyW.delete();
                 break;
             case KeyboardEvent.KEY_A:
                 aExplained.draw();
                 aKey.delete();
                 aKeyRed.draw();
+                krabbyN.delete();
+                krabbyE.delete();
+                krabbyS.delete();
+                krabbyW.draw();
                 break;
             case KeyboardEvent.KEY_S:
                 sExplained.draw();
                 sKey.delete();
                 sKeyRed.draw();
+                krabbyN.delete();
+                krabbyE.delete();
+                krabbyS.draw();
+                krabbyW.delete();
                 break;
             case KeyboardEvent.KEY_D:
                 dExplained.draw();
                 dKey.delete();
                 dKeyRed.draw();
+                krabbyN.delete();
+                krabbyE.draw();
+                krabbyS.delete();
+                krabbyW.delete();
                 break;
             case KeyboardEvent.KEY_Q:
                 starterMenu.starterMenu();
