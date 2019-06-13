@@ -54,7 +54,7 @@ public class Game implements KeyboardHandler {
     int countTrash = 0;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
-        grid = GridFactory.makeGrid(gridType, cols, rows, "Sand.png");
+        grid = GridFactory.makeGrid(gridType, cols, rows, "Sand1280x720.png");
         this.cols = cols;
         this.rows = rows;
         this.delay = delay;
@@ -135,7 +135,10 @@ public class Game implements KeyboardHandler {
         }
 
 
-        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, "pig40.png");
+        String[] cleaners = {"pig40.png", "PIGG40.png", "pigga40.png", "cat40.png", "dog40.png"};
+        int pigs = (int) (Math.random() * cleaners.length);
+
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, cleaners[pigs]);
         player = new Player(grid, gridPosition, ecos);
 
 

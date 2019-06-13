@@ -17,7 +17,7 @@ public class TrashFactory {
         int row;
         int type;
         int pic;
-        String[] paperT = {"paperMagazine40.png", "paperTrash40.png"};
+        String[] paperT = {"paperMagazine20.png", "paperTrash40.png"};
         String[] plasticT = {"plasticSac40.png", "plasticBottle40.png"};
         String[] metalT = {"metal40.png", "metalCan40.png"};
         String[] glassT = {"glassBottle40.png", "glassSecBottle40.png"};
