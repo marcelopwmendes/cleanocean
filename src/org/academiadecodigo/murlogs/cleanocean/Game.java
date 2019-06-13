@@ -19,7 +19,6 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
-
 public class Game implements KeyboardHandler {
 
 
@@ -38,6 +37,8 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
+    Sound sound = new Sound("/Musics/BeachSong.wav");
+
     public static Text score;
     public static Text organic;
     public static Text glass;
@@ -54,7 +55,7 @@ public class Game implements KeyboardHandler {
     int countTrash = 0;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
-        grid = GridFactory.makeGrid(gridType, cols, rows, "Sand1280x720.png");
+        grid = GridFactory.makeGrid(gridType, cols, rows, "Backgrounds/Sand1280x720s.png");
         this.cols = cols;
         this.rows = rows;
         this.delay = delay;
@@ -87,8 +88,10 @@ public class Game implements KeyboardHandler {
 
     public void init() {
 
+
         grid.init();
-        keyboardinit();
+
+        keyboardInit();
 
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
@@ -135,16 +138,18 @@ public class Game implements KeyboardHandler {
         }
 
 
-        String[] cleaners = {"pig40.png", "PIGG40.png", "pigga40.png", "cat40.png", "dog40.png"};
-        int pigs = (int) (Math.random() * cleaners.length);
+        String[] playersPictures = {"Players/Boy_40.png", "Players/Cat_40.png", "Players/Dog_40.png", "Players/Female_Pig_40.png",
+                "Players/Girl_40.png", "Players/Man_40.png", "Players/Pig_40.png", "Players/Pig_Hat_40.png"};
 
-        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, cleaners[pigs]);
-        player = new Player(grid, gridPosition, ecos);
+        int playerPicture = (int) (Math.random() * playersPictures.length);
+
+        GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, playersPictures[playerPicture]);
+        this.player = new Player(grid, gridPosition, ecos);
 
 
-        collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, player);
+        collisionDetector = new CollisionDetector(obstacles, ecos, trashes, grid, this.player);
 
-        player.setCollisionDetector(collisionDetector);
+        this.player.setCollisionDetector(collisionDetector);
 
         play = true;
 
@@ -153,10 +158,9 @@ public class Game implements KeyboardHandler {
 
     public void start(){
 
-        System.out.println("Starting CleanOcean...");
+        sound.play(true);
 
         starterMenu.starterMenu();
-        //init();
 
         while (!play) {
             try{
@@ -167,39 +171,47 @@ public class Game implements KeyboardHandler {
         }
 
         reminder = new Reminder(1);
-        System.out.println("Task scheduled.");
 
         boolean flag = true;
         while (flag) {
+
+            for (Obstacle o : obstacles) {
+                if (o instanceof Movable) {
+                    o.move();
+                    if (collisionDetector.detectPlayer(o.getPosition(), o.getDirection())) {
+                        player.setRandomWalk();
+                    }
+                }
+            }
+
             for (Trash t : trashes) {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
-                        for (Obstacle o : obstacles) {
-                            if (t.getPosition().getRow() != o.getPosition().getRow() || t.getPosition().getCol() != o.getPosition().getCol()) {
-                                t.move();
-                            }
-                        }
-
-                        //}
-                        // if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
-                        //   t.move();
-
-                    }
-                }
-                if (t.getPicked()) {
-                    countTrash++;
-                    if (countTrash >= trashes.length) {
-                        countTrash = trashes.length;
-                        if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
-                            player.setInBeach(false);
-                            GameOcean gameOcean = new GameOcean(GridType.SIMPLE_GFX, cols, rows, delay, player.getScore());
-                            gameOcean.start();
-                            flag = false;
-
+                        if (collisionDetector.detectTrash(t.getPosition(), t.getDirection()) == null) {
+                            t.move();
                         }
                     }
                 }
-                countTrash = 0;
+                if (verifyPickedTrashes() && player.getTrashWeight() == 0) {
+                    Text victory = new Text(600, 350, "Congratulations! You have a better world! \n Score:" + player.getScore());
+                    victory.draw();
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        System.err.println(e.getMessage());
+                    }
+
+                    System.exit(0);
+                }
+                /*if (verifyPickedTrashes()) {
+                    if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
+                        player.setInBeach(false);
+                        GameOcean gameOcean = new GameOcean(GridType.SIMPLE_GFX, cols, rows, delay, player.getScore(), this);
+                        gameOcean.start();
+                        flag = false;
+
+                    }
+                }*/
             }
            try{
                Thread.sleep(delay);
@@ -211,7 +223,17 @@ public class Game implements KeyboardHandler {
     }
 
 
-    public void keyboardinit() {
+    public boolean verifyPickedTrashes() {
+        for (Trash t : trashes) {
+            if (t.getPicked() == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public void keyboardInit() {
 
         pressQ = new KeyboardEvent();
         pressQ.setKey(KeyboardEvent.KEY_Q);
@@ -234,6 +256,13 @@ public class Game implements KeyboardHandler {
 
     }
 
+    /*public void goBack() {
+        grid.setBackgroundSand("Sand.png");
+        for (int i = 0; i < ecos.length; i++) {
+            ecos[i] = EcoFactory.makeEco(grid);
+            ecos[i].setGrid(grid);
+        }
+    }*/
 
 }
 

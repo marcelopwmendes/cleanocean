@@ -28,7 +28,12 @@ public class CollisionDetector {
         this.player = player;
     }
 
-
+    public CollisionDetector(Obstacle[] obstacles, Trash[] trashes, Grid grid, Player player) {
+        this.obstacles = obstacles;
+        this.grid = grid;
+        this.trashes = trashes;
+        this.player = player;
+    }
 
 /*    public boolean detectObstacle(GridPosition position, GridDirection direction) {
 
@@ -54,13 +59,10 @@ public class CollisionDetector {
 
         for (Obstacle o : obstacles) {
 
-
-
-
             if ((o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow) && (!(o instanceof Shell))) {
                 return true;
             }
-            if (o instanceof Shell && (o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow)){
+            if (o instanceof Shell && (o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow)) {
                 Shell shell = (Shell) o;
                 shell.setVisible(true);
                 player.setSlow();
@@ -70,12 +72,14 @@ public class CollisionDetector {
 
         // Detect Eco
 
-
-        if ((nextCol > Main.COLS - 6) && (nextRow == 0)) {
-            return true;
+        if (player.isInBeach()) {
+            if ((nextCol > Main.COLS - 6) && (nextRow == 0)) {
+                return true;
+            }
         }
         return false;
     }
+
 
     public Trash detectTrash(GridPosition position, GridDirection direction) {
 
@@ -94,23 +98,11 @@ public class CollisionDetector {
 
 
     public boolean detectPlayer(GridPosition position, GridDirection direction) {
-
-        //System.out.println(“trash position = ” + position.getCol() + ” ” + position.getRow());
-
         int[] nextPosition = getNextPosition(position, direction);
-
-        //System.out.println(“After nextPosition”);
-        //System.out.println(“trash position = ” + nextPosition[0] + ” ” + nextPosition[1]);
-
-
         int nextCol = nextPosition[0];
         int nextRow = nextPosition[1];
 
-
-        //System.out.println(“player position = ” + player.getPosition().getCol() + ” ” + player.getPosition().getRow());
-
         return ((player.getPosition().getCol() == nextCol) && (player.getPosition().getRow() == nextRow));
-
     }
 
 
