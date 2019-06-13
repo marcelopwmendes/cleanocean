@@ -26,17 +26,9 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
 
         GridDirection newDirection = direction;
 
-
         currentDirection = newDirection;
 
         position.moveInDirection(newDirection, 1);
-
-    }
-
-
-    public GridDirection chooseDirection() {
-
-        return GridDirection.values()[(int) (Math.random() * GridDirection.values().length)];
 
     }
 

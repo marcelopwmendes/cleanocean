@@ -39,6 +39,7 @@ public class Game implements KeyboardHandler {
 
     Sound sound = new Sound("/Musics/BeachSong.wav");
 
+
     public static Text score;
     public static Text organic;
     public static Text glass;
@@ -160,7 +161,9 @@ public class Game implements KeyboardHandler {
 
         sound.play(true);
 
+
         starterMenu.starterMenu();
+
 
         while (!play) {
             try{
@@ -203,15 +206,6 @@ public class Game implements KeyboardHandler {
 
                     System.exit(0);
                 }
-                /*if (verifyPickedTrashes()) {
-                    if ((player.getPosition().getCol() == (Main.COLS - 1)) && (player.getPosition().getRow() == (Main.ROWS - 1))) {
-                        player.setInBeach(false);
-                        GameOcean gameOcean = new GameOcean(GridType.SIMPLE_GFX, cols, rows, delay, player.getScore(), this);
-                        gameOcean.start();
-                        flag = false;
-
-                    }
-                }*/
             }
            try{
                Thread.sleep(delay);

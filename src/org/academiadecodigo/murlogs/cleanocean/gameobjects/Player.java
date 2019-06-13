@@ -4,6 +4,7 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
 import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.Game;
+import org.academiadecodigo.murlogs.cleanocean.Sound;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.TrashType;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
@@ -28,6 +29,7 @@ public class Player implements KeyboardHandler {
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
+    private Sound sound;
 
     private boolean slow = false;
     private int s = 2;
@@ -160,9 +162,11 @@ public class Player implements KeyboardHandler {
     public void pickTrash(Trash trash) {
         if (CAPACITY < (trash.getTrashType().getWeight() + trashWeight)) {
             Game.weight.setText("FULL");
+            sound = new Sound("/Musics/Beep_Alert.wav");
             return;
         }
         trash.setPicked();
+        sound = new Sound("/Musics/Picked_trash.wav");
         addTrash(trash.getTrashType());
         //System.out.println(trashWeight);
     }
