@@ -151,7 +151,7 @@ public class Game implements KeyboardHandler {
     }
 
 
-    public void start() throws InterruptedException {
+    public void start(){
 
         System.out.println("Starting CleanOcean...");
 
@@ -159,7 +159,11 @@ public class Game implements KeyboardHandler {
         //init();
 
         while (!play) {
-            Thread.sleep(500);
+            try{
+                Thread.sleep(500);
+            }catch(InterruptedException e){
+                System.out.println(e.getMessage());
+            }
         }
 
         reminder = new Reminder(1);
@@ -197,7 +201,11 @@ public class Game implements KeyboardHandler {
                 }
                 countTrash = 0;
             }
-            Thread.sleep(delay);
+           try{
+               Thread.sleep(delay);
+           }catch(InterruptedException e){
+               System.out.println(e.getMessage());
+           }
         }
 
     }

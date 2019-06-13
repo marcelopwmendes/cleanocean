@@ -10,7 +10,7 @@ public class Main {
     public static final int DELAY = 400;
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         Game game = new Game(GridType.SIMPLE_GFX, COLS, ROWS, DELAY);
 
