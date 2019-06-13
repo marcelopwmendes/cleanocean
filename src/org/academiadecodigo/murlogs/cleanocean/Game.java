@@ -38,6 +38,7 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
+    Sound sound = new Sound("/Musics/BeachSong.wav");
 
     public static Text score;
     public static Text organic;
@@ -55,7 +56,7 @@ public class Game implements KeyboardHandler {
     int countTrash = 0;
 
     public Game(GridType gridType, int cols, int rows, int delay) {
-        grid = GridFactory.makeGrid(gridType, cols, rows, "Sand1280x720s.png");
+        grid = GridFactory.makeGrid(gridType, cols, rows, "Backgrounds/Sand1280x720s.png");
         this.cols = cols;
         this.rows = rows;
         this.delay = delay;
@@ -88,7 +89,9 @@ public class Game implements KeyboardHandler {
 
     public void init() {
 
+
         grid.init();
+
         keyboardInit();
 
         trashes = new Trash[trashQuantity];
@@ -136,7 +139,9 @@ public class Game implements KeyboardHandler {
         }
 
 
-        String[] playersPictures = {"pig40.png", "PIGG40.png", "pigga40.png", "cat40.png", "dog40.png", "playerGari40.png", "playerGariCleaning40.png"};
+        String[] playersPictures = {"Players/Boy_40.png", "Players/Cat_40.png", "Players/Dog_40.png", "Players/Female_Pig_40.png",
+                "Players/Girl_40.png", "Players/Man_40.png", "Players/Pig_40.png", "Players/Pig_Hat_40.png"};
+
         int playerPicture = (int) (Math.random() * playersPictures.length);
 
         GridPosition gridPosition = grid.makeGridPosition(Main.COLS - 1, Main.ROWS - 5, playersPictures[playerPicture]);
@@ -155,8 +160,11 @@ public class Game implements KeyboardHandler {
     public void start() throws InterruptedException {
 
         System.out.println("Starting CleanOcean...");
+        sound.play(true);
 
         starterMenu.starterMenu();
+
+
         //init();
 
         while (!play) {

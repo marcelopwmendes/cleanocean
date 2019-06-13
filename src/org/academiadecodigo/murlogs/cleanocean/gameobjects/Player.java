@@ -292,11 +292,11 @@ public class Player implements KeyboardHandler {
     /*public void translate() {
         if (!isInBeach()) {
             position.setPos(Main.COLS-1, 0);
-            //grid.makeGridPosition(Main.COLS - 1, 0, "pig40.png");
+            //grid.makeGridPosition(Main.COLS - 1, 0, "...");
             return;
         }
         position.setPos(Main.COLS-1, Main.ROWS-1);
-        //grid.makeGridPosition(Main.COLS-1, Main.ROWS-1, "pig40.png");
+        //grid.makeGridPosition(Main.COLS-1, Main.ROWS-1, "....");
     }
     */
 
