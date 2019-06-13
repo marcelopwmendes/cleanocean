@@ -1,6 +1,7 @@
 package org.academiadecodigo.murlogs.cleanocean.gameobjects.trash;
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
+import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
@@ -69,6 +70,9 @@ public abstract class Trash {
         this.grid = grid;
     }
 
+    public void randomPos(){
+        position.setPos((int) (Math.random() * Main.COLS), (int) (Math.random() * Main.ROWS));
+    }
 
     public void setPicked() {
         picked = true;

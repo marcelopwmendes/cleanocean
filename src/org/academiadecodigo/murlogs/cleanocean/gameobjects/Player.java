@@ -105,10 +105,8 @@ public class Player implements KeyboardHandler {
 
         if (s % 2 != 0) {
             int random = (int) Math.floor(Math.random() * 10);
-            if (random > 3) {
 
-            }
-            if (random <= 3) {
+            if (random <= 5) {
                 position.moveInDirection(direction, 1);
             }
 
