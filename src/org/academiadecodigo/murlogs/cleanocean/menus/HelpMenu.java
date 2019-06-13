@@ -40,6 +40,10 @@ public class HelpMenu implements KeyboardHandler {
     private Picture wExplained;
     private Picture qToLeave;
     private Picture press;
+    private Picture krabbyN;
+    private Picture krabbyW;
+    private Picture krabbyS;
+    private Picture krabbyE;
 
 
     private Grid grid;
@@ -76,23 +80,23 @@ public class HelpMenu implements KeyboardHandler {
         helpDescription1 = new Picture(150, 50, "helpDescription1.png");
         helpDescription1.draw();
 
-        helpDescription2 = new Picture(175, 100, "helpDescription2.png");
+        helpDescription2 = new Picture(100, 105, "helpDescription2.png");
         helpDescription2.draw();
 
-        helpDescription3 = new Picture(200, 150, "helpDescription3.png");
+        helpDescription3 = new Picture(200, 175, "helpDescription3.png");
         helpDescription3.draw();
 
-        helpDescription4 = new Picture(150, 200, "helpDescription4.png");
+        helpDescription4 = new Picture(150, 220, "helpDescription4.png");
         helpDescription4.draw();
 
-        helpDescription5 = new Picture(350, 250, "helpDescription5.png");
-        helpDescription5.draw();
+      //  helpDescription5 = new Picture(350, 250, "helpDescription5.png");
+      //  helpDescription5.draw();
 
-        helpDescription6 = new Picture(550, 300, "helpDescription6.png");
+        helpDescription6 = new Picture(50, 300, "helpDescription6.png");
         helpDescription6.draw();
 
-        helpDescription7 = new Picture(700, 350, "helpDescription7.png");
-        helpDescription7.draw();
+       // helpDescription7 = new Picture(700, 350, "helpDescription7.png");
+       // helpDescription7.draw();
 
         helpDescription8 = new Picture(250, 400, "helpDescription8.png");
         helpDescription8.draw();
@@ -124,8 +128,13 @@ public class HelpMenu implements KeyboardHandler {
         qToLeave = new Picture(980, 690, "pressQToLeave.png");
         qToLeave.draw();
 
+        krabbyN = new Picture(588, 610, "crab40N.png");
+        krabbyS = new Picture(588, 610, "crab40S.png");
+        krabbyW = new Picture(588, 610, "crab40W.png");
+        krabbyE = new Picture(588, 610, "crab40E.png");
 
-        wExplained = new Picture(525, 585, "w to up.png");
+
+        wExplained = new Picture(525, 580, "w to up.png");
         aExplained = new Picture(375, 625, "a to left.png");
         dExplained = new Picture(650, 625, "d to right.png");
         sExplained = new Picture(500, 650, "s to down.png");
@@ -198,21 +207,37 @@ public class HelpMenu implements KeyboardHandler {
                 wExplained.draw();
                 wKey.delete();
                 wKeyRed.draw();
+                krabbyN.draw();
+                krabbyE.delete();
+                krabbyS.delete();
+                krabbyW.delete();
                 break;
             case KeyboardEvent.KEY_A:
                 aExplained.draw();
                 aKey.delete();
                 aKeyRed.draw();
+                krabbyN.delete();
+                krabbyE.delete();
+                krabbyS.delete();
+                krabbyW.draw();
                 break;
             case KeyboardEvent.KEY_S:
                 sExplained.draw();
                 sKey.delete();
                 sKeyRed.draw();
+                krabbyN.delete();
+                krabbyE.delete();
+                krabbyS.draw();
+                krabbyW.delete();
                 break;
             case KeyboardEvent.KEY_D:
                 dExplained.draw();
                 dKey.delete();
                 dKeyRed.draw();
+                krabbyN.delete();
+                krabbyE.draw();
+                krabbyS.delete();
+                krabbyW.delete();
                 break;
             case KeyboardEvent.KEY_Q:
                 starterMenu.starterMenu();
