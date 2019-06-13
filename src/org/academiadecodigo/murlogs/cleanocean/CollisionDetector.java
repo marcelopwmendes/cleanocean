@@ -9,7 +9,6 @@ import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
-
 public class CollisionDetector {
 
     private Grid grid;
@@ -20,6 +19,15 @@ public class CollisionDetector {
     private Player player;
 
 
+    /**
+     * Initializes a newly created Collision Detector with respective parameters
+     *
+     * @param obstacles
+     * @param ecos
+     * @param trashes
+     * @param grid
+     * @param player
+     */
     public CollisionDetector(Obstacle[] obstacles, Eco[] ecos, Trash[] trashes, Grid grid, Player player) {
         this.obstacles = obstacles;
         this.ecos = ecos;
@@ -28,12 +36,6 @@ public class CollisionDetector {
         this.player = player;
     }
 
-    public CollisionDetector(Obstacle[] obstacles, Trash[] trashes, Grid grid, Player player) {
-        this.obstacles = obstacles;
-        this.grid = grid;
-        this.trashes = trashes;
-        this.player = player;
-    }
 
 /*    public boolean detectObstacle(GridPosition position, GridDirection direction) {
 
@@ -49,7 +51,13 @@ public class CollisionDetector {
 
 */
 
-
+    /**
+     * Compare the position of parameters with all of Obstacles
+     *
+     * @param position
+     * @param direction
+     * @return true if position of parameters is equals position of any Obstacle. Else return false
+     */
     public boolean detectObstacle(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = getNextPosition(position, direction);
@@ -80,7 +88,13 @@ public class CollisionDetector {
         return false;
     }
 
-
+    /**
+     * Compare the position of parameters with all Trashes
+     *
+     * @param position
+     * @param direction
+     * @return a Trash if the position equals to position of any Trash. Else returns null
+     */
     public Trash detectTrash(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = getNextPosition(position, direction);
@@ -96,7 +110,13 @@ public class CollisionDetector {
         return null;
     }
 
-
+    /**
+     * Compare the position of parameters with Player's position
+     *
+     * @param position
+     * @param direction
+     * @return true if position equals positon of the Player
+     */
     public boolean detectPlayer(GridPosition position, GridDirection direction) {
         int[] nextPosition = getNextPosition(position, direction);
         int nextCol = nextPosition[0];
@@ -105,7 +125,13 @@ public class CollisionDetector {
         return ((player.getPosition().getCol() == nextCol) && (player.getPosition().getRow() == nextRow));
     }
 
-
+    /**
+     * Get the next position of an Object according with his direction
+     *
+     * @param position
+     * @param direction
+     * @return an Array of ints with the next position [col] [row]
+     */
     public int[] getNextPosition(GridPosition position, GridDirection direction) {
 
         int[] nextPosition = new int[2];
@@ -127,7 +153,12 @@ public class CollisionDetector {
         return nextPosition;
     }
 
-
+    /**
+     * Move a Object up
+     *
+     * @param position
+     * @return the next position
+     */
     private int[] moveUp(GridPosition position) {
         int[] nextPosition = new int[2];
         nextPosition[0] = position.getCol();
@@ -135,6 +166,12 @@ public class CollisionDetector {
         return nextPosition;
     }
 
+    /**
+     * Move a Object down
+     *
+     * @param position
+     * @return the next position
+     */
     private int[] moveDown(GridPosition position) {
         int[] nextPosition = new int[2];
         nextPosition[0] = position.getCol();
@@ -142,6 +179,12 @@ public class CollisionDetector {
         return nextPosition;
     }
 
+    /**
+     * Move a Object left
+     *
+     * @param position
+     * @return the next position
+     */
     private int[] moveLeft(GridPosition position) {
         int[] nextPosition = new int[2];
         nextPosition[0] = position.getCol() - 1;
@@ -149,6 +192,11 @@ public class CollisionDetector {
         return nextPosition;
     }
 
+    /**
+     * Move a Object right
+     * @param position
+     * @return the next position
+     */
     private int[] moveRight(GridPosition position) {
         int[] nextPosition = new int[2];
         nextPosition[0] = position.getCol() + 1;

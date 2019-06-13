@@ -18,9 +18,12 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
+/**
+ * The Game Logic
+ */
 public class Game implements KeyboardHandler {
-
 
     private Grid grid;
     private int delay;
@@ -37,8 +40,7 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
-    Sound sound = new Sound("/resources/Musics/BeachSong.wav");
-
+    Sound sound = new Sound("resources/Musics/BeachSong.wav");
 
     public static Text score;
     public static Text organic;
@@ -157,18 +159,18 @@ public class Game implements KeyboardHandler {
     }
 
 
-    public void start(){
+    public void start() {
 
-        sound.play(true);
+        //sound.play(true);
 
 
         starterMenu.starterMenu();
 
 
         while (!play) {
-            try{
+            try {
                 Thread.sleep(500);
-            }catch(InterruptedException e){
+            } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -196,10 +198,64 @@ public class Game implements KeyboardHandler {
                     }
                 }
                 if (verifyPickedTrashes() && player.getTrashWeight() == 0) {
-                    Text victory = new Text(600, 350, "Congratulations! You have a better world! \n Score:" + player.getScore());
+                    Text victory = new Text(580, 320, "Congratulations! You have a better world! \n Score:");
+                    Integer scoreInteger = player.getScore();
+                    String scoreString = scoreInteger.toString();
+                    String[] scoreArray = scoreString.split("");
+                    String[] scoreNumberArray = {"resources/Menu/0.png", "resources/Menu/1.png", "resources/Menu/2.png", "resources/Menu/3.png",
+                            "resources/Menu/4.png", "resources/Menu/5.png", "resources/Menu/6.png",
+                            "resources/Menu/7.png", "resources/Menu/8.png", "resources/Menu/9.png"};
+                    int x = 550;
+                    for (int i = 0; i < scoreArray.length; i++) {
+                        x += 75;
+                        Picture scorePicture;
+                        switch (scoreArray[i]) {
+                            case "0":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[0]);
+                                scorePicture.draw();
+                                break;
+                            case "1":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[1]);
+                                scorePicture.draw();
+                                break;
+                            case "2":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[2]);
+                                scorePicture.draw();
+                                break;
+                            case "3":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[3]);
+                                scorePicture.draw();
+                                break;
+                            case "4":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[4]);
+                                scorePicture.draw();
+                                break;
+                            case "5":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[5]);
+                                scorePicture.draw();
+                                break;
+                            case "6":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[6]);
+                                scorePicture.draw();
+                                break;
+                            case "7":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[7]);
+                                scorePicture.draw();
+                                break;
+                            case "8":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[8]);
+                                scorePicture.draw();
+                                break;
+                            case "9":
+                                scorePicture = new Picture(x, 330, scoreNumberArray[9]);
+                                scorePicture.draw();
+                                break;
+
+                        }
+                    }
                     victory.draw();
                     try {
-                        Thread.sleep(5000);
+                        Thread.sleep(30000);
                     } catch (InterruptedException e) {
                         System.err.println(e.getMessage());
                     }
@@ -207,11 +263,11 @@ public class Game implements KeyboardHandler {
                     System.exit(0);
                 }
             }
-           try{
-               Thread.sleep(delay);
-           }catch(InterruptedException e){
-               System.out.println(e.getMessage());
-           }
+            try {
+                Thread.sleep(delay);
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+            }
         }
 
     }

@@ -21,7 +21,7 @@ public class ObstacleFactory {
         col = (int) (Math.random() * Main.COLS);
 
 
-        while (((col > Main.COLS - 6) && (row == 0)) || (row > Main.ROWS - 5)) {
+        while (((col > Main.COLS - 6) && (row == 0)) || (row > Main.ROWS - 5) || (col < 4) && (row < 4)) {
             col = (int) (Math.random() * Main.COLS);
             row = (int) (Math.random() * Main.ROWS);
         }

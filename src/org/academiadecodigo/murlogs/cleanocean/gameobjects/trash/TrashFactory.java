@@ -35,7 +35,7 @@ public class TrashFactory {
         row = (int) (Math.random() * Main.ROWS);
         col = (int) (Math.random() * Main.COLS);
 
-        while ( correctPosition && ((col > Main.COLS - 6) && (row == 0)) || (row > Main.ROWS - 5)) {
+        while (correctPosition && ((col > Main.COLS - 6) && (row == 0)) || (row > Main.ROWS - 5) || (col < 4) && (row < 4)) {
 
             correctPosition = false;
 
@@ -52,33 +52,33 @@ public class TrashFactory {
 
         }
 
-            //gridPosition = grid.makeGridPosition(col, row); collisionDetector
+        //gridPosition = grid.makeGridPosition(col, row); collisionDetector
 
-            Trash trash = null;
+        Trash trash = null;
 
-            switch (trashType) {
-                case PAPER:
-                    pic = (int) (Math.random() * paperT.length);
-                    trash = new Paper(grid.makeGridPosition(col, row, paperT[pic]));
-                    break;
-                case METAL:
-                    pic = (int) (Math.random() * metalT.length);
-                    trash = new Metal(grid.makeGridPosition(col, row, metalT[pic]));
-                    break;
-                case PLASTIC:
-                    pic = (int) (Math.random() * plasticT.length);
-                    trash = new Plastic(grid.makeGridPosition(col, row, plasticT[pic]));
-                    break;
-                case GLASS:
-                    pic = (int) (Math.random() * glassT.length);
-                    trash = new Glass(grid.makeGridPosition(col, row, glassT[pic]));
-                    break;
-                case ORGANIC:
-                    pic = (int) (Math.random() * organicT.length);
-                    trash = new Organic(grid.makeGridPosition(col, row, organicT[pic]));
-                    break;
-            }
-            return trash;
+        switch (trashType) {
+            case PAPER:
+                pic = (int) (Math.random() * paperT.length);
+                trash = new Paper(grid.makeGridPosition(col, row, paperT[pic]));
+                break;
+            case METAL:
+                pic = (int) (Math.random() * metalT.length);
+                trash = new Metal(grid.makeGridPosition(col, row, metalT[pic]));
+                break;
+            case PLASTIC:
+                pic = (int) (Math.random() * plasticT.length);
+                trash = new Plastic(grid.makeGridPosition(col, row, plasticT[pic]));
+                break;
+            case GLASS:
+                pic = (int) (Math.random() * glassT.length);
+                trash = new Glass(grid.makeGridPosition(col, row, glassT[pic]));
+                break;
+            case ORGANIC:
+                pic = (int) (Math.random() * organicT.length);
+                trash = new Organic(grid.makeGridPosition(col, row, organicT[pic]));
+                break;
         }
-
+        return trash;
     }
+
+}

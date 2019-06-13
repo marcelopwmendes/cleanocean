@@ -1,7 +1,9 @@
 package org.academiadecodigo.murlogs.cleanocean;
 
+import org.academiadecodigo.murlogs.cleanocean.grid.SimpleGfxGrid;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.awt.*;
 import java.util.Timer;
@@ -10,7 +12,7 @@ import java.util.TimerTask;
 public class Reminder {
     Timer timer;
     Toolkit toolkit;
-    int minutes = 10;
+    int minutes = 2;
     int seconds = 00;
     Text text = new Text(33, 10, "TIME: " + minutes + ":" + seconds);
 
@@ -22,14 +24,13 @@ public class Reminder {
     }
 
     class RemindTask extends TimerTask {
-        int numWarningBeeps = 600000;
+        int numWarningBeeps = 12000;
 
         @Override
         public void run() {
             text.setColor(Color.RED);
             text.draw();
             if (numWarningBeeps > 0) {
-                //toolkit.beep();
                 numWarningBeeps--;
                 if (seconds != 0) {
                     text.delete();
@@ -52,7 +53,10 @@ public class Reminder {
 
             }
             text.translate(600, 350);
-            text.setText("Game Over");
+            Picture picture = new Picture(SimpleGfxGrid.PADDING, SimpleGfxGrid.PADDING, "resources/Menu/GameOver.png");
+            Picture gameOver = new Picture(333, 250, "resources/Menu/game_over.png");
+            picture.draw();
+            gameOver.draw();
             text.draw();
             try {
                 Thread.sleep(5000);
