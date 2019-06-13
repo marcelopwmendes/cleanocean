@@ -13,14 +13,12 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
     protected GridDirection currentDirection = GridDirection.LEFT;
 
 
-
     public Obstacle(GridPosition pos) {
         this.position = pos;
     }
 
 
     public void move() {
-
     }
 
 
@@ -32,10 +30,6 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
         currentDirection = newDirection;
 
         position.moveInDirection(newDirection, 1);
-                /*if (collisionDetector.isUnSafe(position())) {
-                    crash();
-                    break;
-                }*/
 
     }
 
@@ -47,7 +41,6 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
     }
 
 
-
     public void setGrid(Grid grid) {
         this.grid = grid;
     }
@@ -57,12 +50,12 @@ public abstract class Obstacle { // classe Obstacle para ABSTRACT - para criar o
     }
 
 
-    public  GridDirection getDirection() {
+    public GridDirection getDirection() {
         return currentDirection;
     }
 
 
-    public void randomPos(){
+    public void randomPos() {
         position.setPos((int) (Math.random() * Main.COLS), (int) (Math.random() * Main.ROWS));
     }
 }

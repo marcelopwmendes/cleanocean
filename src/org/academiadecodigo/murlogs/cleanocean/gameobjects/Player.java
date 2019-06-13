@@ -164,7 +164,7 @@ public class Player implements KeyboardHandler {
         }
         trash.setPicked();
         addTrash(trash.getTrashType());
-        System.out.println(trashWeight);
+        //System.out.println(trashWeight);
     }
 
     public void setCollisionDetector(CollisionDetector collisionDetector) {
@@ -224,35 +224,35 @@ public class Player implements KeyboardHandler {
                 trash[0]++;
                 trashWeight += trashType.getWeight();
                 Game.paper.setText("PAPER: " + trash[0]);
-                System.out.println(trash[0]);
+                //System.out.println(trash[0]);
                 break;
 
             case METAL:
                 trash[1]++;
                 trashWeight += trashType.getWeight();
                 Game.metal.setText("METAL: " + trash[1]);
-                System.out.println(trash[1]);
+                //System.out.println(trash[1]);
                 break;
 
             case PLASTIC:
                 trash[2]++;
                 trashWeight += trashType.getWeight();
                 Game.plastic.setText("PLASTIC: " + trash[2]);
-                System.out.println(trash[2]);
+                //System.out.println(trash[2]);
                 break;
 
             case GLASS:
                 trash[3]++;
                 trashWeight += trashType.getWeight();
                 Game.glass.setText("GLASS: " + trash[3]);
-                System.out.println(trash[3]);
+                //System.out.println(trash[3]);
                 break;
 
             case ORGANIC:
                 trash[4]++;
                 trashWeight += trashType.getWeight();
                 Game.organic.setText("ORGANIC: " + trash[4]);
-                System.out.println(trash[4]);
+                //System.out.println(trash[4]);
                 break;
         }
 

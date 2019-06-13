@@ -1,9 +1,7 @@
 package org.academiadecodigo.murlogs.cleanocean.gameobjects.trash;
 
-import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
 import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.grid.Grid;
-import org.academiadecodigo.murlogs.cleanocean.grid.GridColor;
 import org.academiadecodigo.murlogs.cleanocean.grid.GridDirection;
 import org.academiadecodigo.murlogs.cleanocean.grid.position.GridPosition;
 
@@ -35,10 +33,7 @@ public abstract class Trash {
         currentDirection = newDirection;
 
         position.moveInDirection(newDirection, 1);
-                /*if (collisionDetector.isUnSafe(position())) {
-                    crash();
-                    break;
-                }*/
+
 
     }
 

@@ -19,7 +19,6 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
-
 public class Game implements KeyboardHandler {
 
 
@@ -153,7 +152,7 @@ public class Game implements KeyboardHandler {
 
     public void start() throws InterruptedException {
 
-        System.out.println("Starting CleanOcean...");
+        //System.out.println("Starting CleanOcean...");
 
         starterMenu.starterMenu();
         //init();
@@ -163,7 +162,7 @@ public class Game implements KeyboardHandler {
         }
 
         reminder = new Reminder(1);
-        System.out.println("Task scheduled.");
+        //System.out.println("Task scheduled.");
 
         boolean flag = true;
         while (flag) {
@@ -180,10 +179,12 @@ public class Game implements KeyboardHandler {
             for (Trash t : trashes) {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
-                        t.move();
+                        if (collisionDetector.detectTrash(t.getPosition(), t.getDirection()) == null) {
+                            t.move();
+                        }
                     }
                 }
-                if (verifyPickedTrashes() == true && player.getTrashWeight() == 0) {
+                if (verifyPickedTrashes() && player.getTrashWeight() == 0) {
                     Text victory = new Text(600, 350, "YOU WON ! \n Score:" + player.getScore());
                     victory.draw();
                     try {

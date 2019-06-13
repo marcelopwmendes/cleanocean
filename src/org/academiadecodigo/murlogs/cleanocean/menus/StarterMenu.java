@@ -41,8 +41,8 @@ public class StarterMenu implements KeyboardHandler {
 
         keyboardInit();
         //Initial menu
-        SimpleGfxGrid gfxGrid = null;
-        background = new Picture(gfxGrid.getPADDING(), gfxGrid.getPADDING(), "menu background.png");
+        //Grid gfxGrid = grid;
+        background = new Picture(SimpleGfxGrid.PADDING, SimpleGfxGrid.PADDING, "menu background.png");
         background.draw();
 
         play = new Picture(250, 520, "play.png");

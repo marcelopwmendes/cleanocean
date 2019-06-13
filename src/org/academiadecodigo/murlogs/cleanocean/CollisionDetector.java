@@ -59,7 +59,6 @@ public class CollisionDetector {
 
         for (Obstacle o : obstacles) {
 
-
             if ((o.getPosition().getCol() == nextCol) && (o.getPosition().getRow() == nextRow) && (!(o instanceof Shell))) {
                 return true;
             }
@@ -99,23 +98,11 @@ public class CollisionDetector {
 
 
     public boolean detectPlayer(GridPosition position, GridDirection direction) {
-
-        //System.out.println(“trash position = ” + position.getCol() + ” ” + position.getRow());
-
         int[] nextPosition = getNextPosition(position, direction);
-
-        //System.out.println(“After nextPosition”);
-        //System.out.println(“trash position = ” + nextPosition[0] + ” ” + nextPosition[1]);
-
-
         int nextCol = nextPosition[0];
         int nextRow = nextPosition[1];
 
-
-        //System.out.println(“player position = ” + player.getPosition().getCol() + ” ” + player.getPosition().getRow());
-
         return ((player.getPosition().getCol() == nextCol) && (player.getPosition().getRow() == nextRow));
-
     }
 
 
