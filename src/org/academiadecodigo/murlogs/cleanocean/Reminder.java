@@ -51,7 +51,7 @@ public class Reminder {
                 }
 
             }
-            text.translate(40, 22);
+            text.translate(600, 350);
             text.setText("Game Over");
             text.draw();
             try {

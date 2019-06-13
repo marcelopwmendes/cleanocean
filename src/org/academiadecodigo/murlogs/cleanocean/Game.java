@@ -88,7 +88,7 @@ public class Game implements KeyboardHandler {
     public void init() {
 
         grid.init();
-        keyboardinit();
+        keyboardInit();
 
         trashes = new Trash[trashQuantity];
         obstacles = new Obstacle[obstacleQuantity];
@@ -170,16 +170,7 @@ public class Game implements KeyboardHandler {
             for (Trash t : trashes) {
                 if (!t.getPicked()) {
                     if (t instanceof Movable) {
-                        for (Obstacle o : obstacles) {
-                            //if (t.getPosition().getRow() != o.getPosition().getRow() || t.getPosition().getCol() != o.getPosition().getCol()) {
                             t.move();
-                            //}
-                        }
-
-                        //}
-                        // if (t.getTrashType() == TrashType.PAPER || t.getTrashType() == TrashType.PLASTIC) {
-                        //   t.move();
-
                     }
                 }
                 if (verifyPickedTrashes() == true && player.getTrashWeight() == 0) {
@@ -219,7 +210,7 @@ public class Game implements KeyboardHandler {
     }
 
 
-    public void keyboardinit() {
+    public void keyboardInit() {
 
         pressQ = new KeyboardEvent();
         pressQ.setKey(KeyboardEvent.KEY_Q);
