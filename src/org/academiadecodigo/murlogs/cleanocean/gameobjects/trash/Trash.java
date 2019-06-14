@@ -29,7 +29,6 @@ public abstract class Trash {
 
         GridDirection newDirection = direction;
 
-
         currentDirection = newDirection;
 
         position.moveInDirection(newDirection, 1);
@@ -55,11 +54,9 @@ public abstract class Trash {
         return trashType;
     }
 
-
     public boolean getPicked() {
         return picked;
     }
-
 
     public void setGrid(Grid grid) {
         this.grid = grid;

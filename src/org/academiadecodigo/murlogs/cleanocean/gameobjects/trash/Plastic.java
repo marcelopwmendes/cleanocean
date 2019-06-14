@@ -17,7 +17,7 @@ public class Plastic extends Trash implements Movable {
     @Override
     public void move() {
         counter++;
-        //System.out.println("Moving...");
+
         if (counter % 2 == 0) {
             accelerate(chooseDirection());
         }

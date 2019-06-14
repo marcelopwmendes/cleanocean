@@ -42,7 +42,6 @@ public class SimpleGfxPosition extends AbstractGridPosition {
     @Override
     public void setColor(GridColor color) {
         super.setColor(color);
-        //picture.setColor(SimpleGfxColorMapper.getColor(color));
     }
 
     public void setPicture() {

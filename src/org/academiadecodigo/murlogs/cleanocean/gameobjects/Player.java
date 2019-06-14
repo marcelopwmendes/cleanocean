@@ -2,7 +2,6 @@ package org.academiadecodigo.murlogs.cleanocean.gameobjects;
 
 
 import org.academiadecodigo.murlogs.cleanocean.CollisionDetector;
-import org.academiadecodigo.murlogs.cleanocean.Main;
 import org.academiadecodigo.murlogs.cleanocean.Game;
 import org.academiadecodigo.murlogs.cleanocean.Sound;
 import org.academiadecodigo.murlogs.cleanocean.gameobjects.trash.Trash;
@@ -24,19 +23,16 @@ public class Player implements KeyboardHandler {
     private int trashWeight = 0;
     private int score = 0;
     private boolean inBeach = true;
-    private Keyboard keyboard;//= new Keyboard(this);
+    private Keyboard keyboard; //= new Keyboard(this);
     private Eco[] ecos;
     private GridPosition position;
     protected GridDirection currentDirection;
     private Grid grid;
     private Sound sound;
-
     private boolean slow = false;
     private int s = 2;
-    //private String pic = "girl_front_stopped.png";
     private boolean randomWalk;
     private int randomWalkCounter = 20;
-
     private CollisionDetector collisionDetector;
 
 
@@ -74,16 +70,6 @@ public class Player implements KeyboardHandler {
         right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
 
-  /*
-       // apanhar o lixo carregando no espaço - por exemplo!
-       // ou então não apanhar com o espaço, apanhar automaticamente
-       // e caso tenha a mochila cheia e apanhe mais algum o mochila rompe
-       // e cai o lixo OU ENTÃO o lixo serve como obstáculo até que esvazie a mochila
-
-        KeyboardEvent pickTrash = new KeyboardEvent();
-        right.setKey(KeyboardEvent.KEY_SPACE);
-        right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-*/
         keyboard.addEventListener(up);
         keyboard.addEventListener(left);
         keyboard.addEventListener(down);
@@ -129,21 +115,6 @@ public class Player implements KeyboardHandler {
         }
 
 
-        /*if (slow) {
-            position.moveInDirection(GridDirection.values()[(int) Math.floor(Math.random() * GridDirection.values().length)], 1);
-            s++;
-            if (s == 10) {
-                slow = false;
-                s = 0;
-            }
-            System.out.println(s);
-        }
-        if (!slow) {
-            position.moveInDirection(direction, 1);
-        }
-*/
-
-
         // empty bagTrash
         if (isInBeach()) {
             if (getPosition().getRow() == 1 && getPosition().getCol() > 27) {
@@ -154,7 +125,6 @@ public class Player implements KeyboardHandler {
                 clearTrash();
                 setScore(points);
                 Game.score.setText("SCORE: " + score);
-                //System.out.println(getScore());
             }
         }
     }
@@ -170,7 +140,6 @@ public class Player implements KeyboardHandler {
         sound = new Sound("/resources/Musics/Picked_trash.wav");
         sound.play(true);
         addTrash(trash.getTrashType());
-        //System.out.println(trashWeight);
     }
 
     public void setCollisionDetector(CollisionDetector collisionDetector) {
@@ -273,19 +242,13 @@ public class Player implements KeyboardHandler {
         return score;
     }
 
-
     public void setScore(int score) {
         this.score = this.score + score;
     }
 
-
     public boolean isInBeach() {
         return inBeach;
     }
-
-    /*public void setInBeach(boolean inBeach) {
-        this.inBeach = inBeach;
-    }*/
 
     public GridPosition getPosition() {
         return position;
@@ -294,17 +257,6 @@ public class Player implements KeyboardHandler {
     public void setGrid(Grid grid) {
         this.grid = grid;
     }
-
-    /*public void translate() {
-        if (!isInBeach()) {
-            position.setPos(Main.COLS-1, 0);
-            //grid.makeGridPosition(Main.COLS - 1, 0, "...");
-            return;
-        }
-        position.setPos(Main.COLS-1, Main.ROWS-1);
-        //grid.makeGridPosition(Main.COLS-1, Main.ROWS-1, "....");
-    }
-    */
 
     public int getTrashWeight() {
         return trashWeight;

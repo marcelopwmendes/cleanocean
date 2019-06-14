@@ -14,7 +14,6 @@ public class Crab extends Obstacle implements Movable {
 
 
     private int counter;
-    private int period;
     private boolean freezed = false;
 
 
@@ -22,7 +21,6 @@ public class Crab extends Obstacle implements Movable {
 
         super(position);
     }
-
 
 
     @Override
@@ -59,7 +57,5 @@ public class Crab extends Obstacle implements Movable {
         }
 
     }
-
-
 
 }

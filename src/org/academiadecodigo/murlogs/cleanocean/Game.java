@@ -306,14 +306,6 @@ public class Game implements KeyboardHandler {
 
     }
 
-    /*public void goBack() {
-        grid.setBackgroundSand("Sand.png");
-        for (int i = 0; i < ecos.length; i++) {
-            ecos[i] = EcoFactory.makeEco(grid);
-            ecos[i].setGrid(grid);
-        }
-    }*/
-
 }
 
 

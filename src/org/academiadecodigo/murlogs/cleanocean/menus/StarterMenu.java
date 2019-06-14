@@ -102,7 +102,6 @@ public class StarterMenu implements KeyboardHandler {
 
         keyboard.addEventListener(releaseSpace);
 
-
     }
 
 

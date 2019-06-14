@@ -12,18 +12,12 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class HelpMenu implements KeyboardHandler {
 
 
-    //FALTA meter um boneco a olhar para cima/baixo/esq/dir consoante as teclas e mudar o texto da descrição
-
     private Picture background;
-    private Picture reverseMenuSelector;
-
     private Picture helpDescription1;
     private Picture helpDescription2;
     private Picture helpDescription3;
     private Picture helpDescription4;
-    private Picture helpDescription5;
     private Picture helpDescription6;
-    private Picture helpDescription7;
     private Picture helpDescription8;
     private Picture helpDescription9;
     private Picture aKey;
@@ -100,7 +94,6 @@ public class HelpMenu implements KeyboardHandler {
         helpDescription9 = new Picture(250, 450, "resources/Menu/helpDescription9.png");
         helpDescription9.draw();
 
-        reverseMenuSelector = new Picture(677, 520, "resources/Menu/Menu_selector_reversed.png");
 
         press = new Picture(25, 575, "resources/Menu/Press_Button.png");
         press.draw();
@@ -130,7 +123,7 @@ public class HelpMenu implements KeyboardHandler {
         krabbyE = new Picture(588, 610, "resources/Menu/crab40E.png");
 
 
-        wExplained = new Picture(525, 585, "resources/Menu/W_key_to_up.png");
+        wExplained = new Picture(525, 575, "resources/Menu/W_key_to_up.png");
         aExplained = new Picture(375, 625, "resources/Menu/A_key_to_left.png");
         dExplained = new Picture(650, 625, "resources/Menu/D_key_to_right.png");
         sExplained = new Picture(500, 650, "resources/Menu/S_key_to_down.png");
@@ -159,7 +152,6 @@ public class HelpMenu implements KeyboardHandler {
         pressQ.setKey(KeyboardEvent.KEY_Q);
         pressQ.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
-
         releaseW = new KeyboardEvent();
         releaseW.setKey(KeyboardEvent.KEY_W);
         releaseW.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
@@ -179,7 +171,6 @@ public class HelpMenu implements KeyboardHandler {
         releaseQ = new KeyboardEvent();
         releaseQ.setKey(KeyboardEvent.KEY_Q);
         releaseQ.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
-
 
         keyboard.addEventListener(pressW);
         keyboard.addEventListener(pressA);
@@ -282,6 +273,4 @@ public class HelpMenu implements KeyboardHandler {
                 break;
         }
     }
-
-
 }

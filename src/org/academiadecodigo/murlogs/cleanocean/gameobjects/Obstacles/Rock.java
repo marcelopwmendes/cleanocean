@@ -9,6 +9,5 @@ public class Rock extends Obstacle {
 
     public Rock(GridPosition position) {
         super(position);
-      //  position.setColor(GridColor.BLUE);
     }
 }

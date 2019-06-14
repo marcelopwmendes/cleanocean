@@ -37,26 +37,12 @@ public class CollisionDetector {
     }
 
 
-/*    public boolean detectObstacle(GridPosition position, GridDirection direction) {
-
-        GridPosition nextPosition = getNextPosition(position, direction);
-
-        for (Obstacle o : obstacles) {
-            if (o.getPosition().equals(nextPosition)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-*/
-
     /**
      * Compare the position of parameters with all of Obstacles
      *
      * @param position
      * @param direction
-     * @return true if position of parameters is equals position of any Obstacle. Else return false
+     * @return true if position of parameters is equals position of any Obstacle. Otherwise return false.
      */
     public boolean detectObstacle(GridPosition position, GridDirection direction) {
 
@@ -79,7 +65,6 @@ public class CollisionDetector {
         }
 
         // Detect Eco
-
         if (player.isInBeach()) {
             if ((nextCol > Main.COLS - 6) && (nextRow == 0)) {
                 return true;
@@ -93,7 +78,7 @@ public class CollisionDetector {
      *
      * @param position
      * @param direction
-     * @return a Trash if the position equals to position of any Trash. Else returns null
+     * @return a Trash if the position equals to position of any Trash. Otherwise returns null
      */
     public Trash detectTrash(GridPosition position, GridDirection direction) {
 
@@ -115,7 +100,7 @@ public class CollisionDetector {
      *
      * @param position
      * @param direction
-     * @return true if position equals positon of the Player
+     * @return true if position equals position of the Player
      */
     public boolean detectPlayer(GridPosition position, GridDirection direction) {
         int[] nextPosition = getNextPosition(position, direction);
@@ -126,11 +111,11 @@ public class CollisionDetector {
     }
 
     /**
-     * Get the next position of an Object according with his direction
+     * Get the next position of an Object according with its direction
      *
      * @param position
      * @param direction
-     * @return an Array of ints with the next position [col] [row]
+     * @return an Array of ints with the next position [col][row]
      */
     public int[] getNextPosition(GridPosition position, GridDirection direction) {
 
@@ -154,7 +139,7 @@ public class CollisionDetector {
     }
 
     /**
-     * Move a Object up
+     * Move an Object up
      *
      * @param position
      * @return the next position
@@ -167,7 +152,7 @@ public class CollisionDetector {
     }
 
     /**
-     * Move a Object down
+     * Move an Object down
      *
      * @param position
      * @return the next position
@@ -180,7 +165,7 @@ public class CollisionDetector {
     }
 
     /**
-     * Move a Object left
+     * Move an Object to the left
      *
      * @param position
      * @return the next position
@@ -193,7 +178,7 @@ public class CollisionDetector {
     }
 
     /**
-     * Move a Object right
+     * Move an Object to the right
      * @param position
      * @return the next position
      */
@@ -203,6 +188,5 @@ public class CollisionDetector {
         nextPosition[1] = position.getRow();
         return nextPosition;
     }
-
 
 }

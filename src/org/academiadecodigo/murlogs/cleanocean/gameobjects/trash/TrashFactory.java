@@ -12,16 +12,15 @@ public class TrashFactory {
 
     public static Trash makeTrash(Grid grid, Obstacle[] obstacles, CollisionDetector collisionDetector) {
 
-        GridPosition gridPosition;
         int col;
         int row;
         int type;
         int pic;
         String[] paperT = {"resources/Trashes/paperMagazine20.png", "resources/Trashes/paperTrash40.png"};
         String[] plasticT = {"resources/Trashes/plasticSac40.png", "resources/Trashes/plasticBottle40.png"};
-        String[] metalT = {"resources/Trashes/metal40.png", "resources/Trashes/metalCan40.png"};
+        String[] metalT = {"resources/Trashes/metalCan40.png", "resources/Trashes/metalCan25.png"};
         String[] glassT = {"resources/Trashes/glassBottle40.png", "resources/Trashes/glassSecBottle40.png"};
-        String[] organicT = {"resources/Trashes/organicBanana40.png", "resources/Trashes/organicCorn40.png"};
+        String[] organicT = {"resources/Trashes/organicBanana40.png", "resources/Trashes/organicCorn25.png"};
 
 
         type = (int) (Math.random() * TrashType.values().length);
@@ -52,7 +51,6 @@ public class TrashFactory {
 
         }
 
-        //gridPosition = grid.makeGridPosition(col, row); collisionDetector
 
         Trash trash = null;
 
