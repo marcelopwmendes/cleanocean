@@ -40,7 +40,7 @@ public class Game implements KeyboardHandler {
     Keyboard keyboard = new Keyboard(this);
     KeyboardEvent pressQ;
 
-    Sound sound = new Sound("resources/Musics/BeachSong.wav");
+    Sound sound = new Sound("/resources/Musics/Beachsong.wav");
 
     public static Text score;
     public static Text organic;
@@ -161,7 +161,7 @@ public class Game implements KeyboardHandler {
 
     public void start() {
 
-        //sound.play(true);
+        sound.play(true);
 
 
         starterMenu.starterMenu();

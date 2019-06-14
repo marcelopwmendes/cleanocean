@@ -162,11 +162,13 @@ public class Player implements KeyboardHandler {
     public void pickTrash(Trash trash) {
         if (CAPACITY < (trash.getTrashType().getWeight() + trashWeight)) {
             Game.weight.setText("FULL");
-            sound = new Sound("/Musics/Beep_Alert.wav");
+            sound = new Sound("/resources/Musics/Beep_Alert.wav");
+            sound.play(true);
             return;
         }
         trash.setPicked();
-        sound = new Sound("/Musics/Picked_trash.wav");
+        sound = new Sound("/resources/Musics/Picked_trash.wav");
+        sound.play(true);
         addTrash(trash.getTrashType());
         //System.out.println(trashWeight);
     }
