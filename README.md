@@ -24,8 +24,8 @@ Simple educational game that teaches kids to recycle and the importance to do it
 <br>
 The goal here is to pick up all the trash on the beach (some trashes fly) and recycle before the time runs out. <br>
 <br>
-Move using W (Up), A (Left), S (Down), D (Right).
-The Crab can stun you for a while making you go in randomly directions.
+Move using W (Up), A (Left), S (Down), D (Right). <br>
+The Crab can stun you for a while making you go in randomly directions. <br>
 The Shell is hidding in the sand, and if you step on it, it will slows you down. <br>
 <br>
 
